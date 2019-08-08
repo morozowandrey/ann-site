@@ -1,0 +1,41 @@
+@import "mixins", "var";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $r-ff;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: auto;
+  background-color: #000;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}

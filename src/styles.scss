@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+// base
+@import "reset",
+        "var",
+      "./app/styles/base.scss",
+        "mixins", 
+        "helpers", 
+        "animations";
+
+@import /* webpackPreload: true */ "fonts";
+
+// node_modules libs
+// @import "../node_modules/tiny-slider/dist/tiny-slider.css";
