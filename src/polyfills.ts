@@ -61,3 +61,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+ // https://github.com/wilddeer/stickyfill
+import '../node_modules/stickyfilljs/dist/stickyfill.min.js';

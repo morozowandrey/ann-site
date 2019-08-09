@@ -1,0 +1,24 @@
+<header *ngIf="isMobileSize"></header>
+<div class="home">
+  <div class="wrapper home-aline">
+
+    <h1 class="home-title">
+      I’m a designer
+      <span class="home-title__part">that execute from</span>
+      <span class="home-title__part home-title__part_mob">
+        that execute from idea → concept → wireframing → design
+      </span>
+    </h1>
+
+    <div class="home-marquee">
+      <div class="home-marquee-mover marqueeAnimFirst">
+        idea → concept → wireframing → design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="home-marquee-mover marqueeAnimSecond">
+        idea → concept → wireframing → design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+</div>
+<header *ngIf="!isMobileSize"></header>

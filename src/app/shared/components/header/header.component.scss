@@ -1,5 +1,68 @@
 @import "mixins", "media-mixins", "var";
 
-p {
-  @include title-white;
+.header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 74px 60px 80px;
+  }
+
+  &__logo {
+    font-family: $b-ff;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &-nav {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+
+    &_mob {
+      display: none;
+      
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    &__item {
+      margin-right: 63px;
+      font-family: $r-ff;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 1.43;
+      letter-spacing: 1px;
+      color: $gray;
+      cursor: pointer;
+
+      &_active {
+        color: #fff;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+home :host {
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 102;
+  position: -webkit-sticky;
+  position: sticky;
+
+  @include media-breakpoint-down(sm) {
+    position: fixed;
+  }
 }

@@ -4,6 +4,13 @@
   max-width: 1366px;
   margin: 0 auto;
   height: 100%;
+
+  @include media-breakpoint-up(l) {
+    max-width: 1440px;
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: 1920px;
+  }
 }
 
 .container {
@@ -49,4 +56,8 @@
 
 .hide {
   opacity: 0;
+}
+
+.pw123 {
+  padding: 0 123px;
 }

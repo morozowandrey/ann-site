@@ -1,10 +1,11 @@
 $grid-breakpoints: (
   null: 0,
-  xs: 360px,
-  sm: 576px,
-  md: 768px,
-  l: 1366px,
-  xl: 1440px,
+  xxs: 360px,
+  xs: 375px,
+  sm: 768px,
+  md: 1366px,
+  l: 1440px,
+  xl: 1536px,
   xxl: 1920px
 ) !default;
 

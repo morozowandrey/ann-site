@@ -11,7 +11,6 @@
   }
 }
 
-
 .fadeOut {
   animation: fadeOut 0.3s ease-in forwards;
 }
@@ -22,5 +21,42 @@
 
   to {
     opacity: 0;
+  }
+}
+
+.marqueeAnimBox {
+  animation: marqueeAnimBox 10s linear forwards;
+}
+@keyframes marqueeAnimBox {
+  from {
+    transform: translateX(1316px);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.marqueeAnimFirst {
+  animation: marqueeAnimFirst 20s linear infinite;
+}
+@keyframes marqueeAnimFirst {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marqueeAnimSecond {
+  animation: marqueeAnimSecond 20s linear infinite;
+  animation-delay: 10s;
+}
+@keyframes marqueeAnimSecond {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
   }
 }

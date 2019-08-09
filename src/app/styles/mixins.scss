@@ -12,7 +12,7 @@
 }
 
 @mixin title-gray {
-  font-family: ObjectSans;
+  font-family: $t-ff;
   font-size: 98px;
   font-weight: 100;
   font-style: normal;
@@ -23,7 +23,7 @@
 }
 
 @mixin text-desk {
-  font-family: ObjectSans;
+  font-family: $t-ff;
   font-size: 40px;
   font-weight: 100;
   font-style: normal;
@@ -34,7 +34,7 @@
 }
 
 @mixin text-mob {
-  font-family: ObjectSans;
+  font-family: $r-ff;
   font-size: 24px;
   font-weight: 100;
   font-style: normal;
@@ -45,7 +45,7 @@
 }
 
 @mixin label-gray {
-  font-family: ObjectSans;
+  font-family: $r-ff;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -56,7 +56,7 @@
 }
 
 @mixin label-white {
-  font-family: ObjectSans;
+  font-family: $r-ff;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -67,7 +67,7 @@
 }
 
 @mixin label-sm {
-  font-family: ObjectSans;
+  font-family: $r-ff;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
