@@ -53,6 +53,11 @@
         background-image: url(../../../../assets/icons/inst.png);
       }
     }
+    &:nth-child(4) {
+      &::before {
+        background-image: url(../../../../assets/icons/arena.svg);
+      }
+    }
     &:last-of-type {
       margin-right: 0;
     }
