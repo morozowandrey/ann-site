@@ -1,0 +1,60 @@
+@import "mixins", "media-mixins", "var";
+
+.contacts {
+  width: 100%;
+
+  &__item {
+    margin-right: 72px;
+    padding-left: 34px;
+    position: relative;
+
+    font-family: $r-ff;
+    font-size: 24px;
+    line-height: 0.83;
+    color: $gray;
+
+    @include media-breakpoint-down(375) {
+      margin-right: 40px;
+      padding-left: 20px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+
+      @include media-breakpoint-down(375) {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &:nth-child(1) {
+      &::before {
+        background-image: url(../../../../assets/icons/fb.svg);
+      }
+    }
+    &:nth-child(2) {
+      &::before {
+        background-image: url(../../../../assets/icons/tg.svg);
+      }
+    }
+    &:nth-child(3) {
+      &::before {
+        background-image: url(../../../../assets/icons/inst.png);
+      }
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

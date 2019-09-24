@@ -1,12 +1,12 @@
 $grid-breakpoints: (
   null: 0,
-  xxs: 360px,
-  xs: 375px,
-  sm: 768px,
-  md: 1366px,
-  l: 1440px,
-  xl: 1536px,
-  xxl: 1920px
+  360: 360px,
+  375: 375px,
+  768: 768px,
+  1366: 1366px,
+  1440: 1440px,
+  1536: 1536px,
+  1920: 1920px
 ) !default;
 
 // Breakpoint viewport sizes and media queries.

@@ -1,7 +1,17 @@
 @import "mixins", "media-mixins", "var", "animations";
 
 .home {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 164px);
+
+  @include media-breakpoint-down(1440) {
+    height: calc(100vh - 132px);
+  }
+  @include media-breakpoint-down(1366) {
+    height: calc(100vh - 116px);
+  }
+  @include media-breakpoint-down(768) {
+    height: 100vh;
+  }
 
   &-aline {
     display: flex;
@@ -12,45 +22,55 @@
 
   &-title {
     @include title-white;
+    padding-left: 148px;
+    margin-bottom: 74px;
+    font-size: 140px;
+    line-height: 0.7;
 
-    @include media-breakpoint-up(xl) {
-      padding-left: 148px;
-      margin-bottom: 32px;
-      font-size: 140px;
-    }
-
-    @include media-breakpoint-down(xl) {
-      padding-left: 123px;
+    @include media-breakpoint-down(1440) {
+      padding-left: 117px;
       margin-bottom: 19px;
-      font-size: 112px;
+      font-size: 104px;
+      line-height: 0.94;
     }
 
-    @include media-breakpoint-down(l) {
+    @include media-breakpoint-down(1366) {
+      padding-left: 123px;
       font-size: 98px;
+      line-height: 1;
     }
 
-    @include media-breakpoint-down(sm) {
-      font-size: 78px;
+    @include media-breakpoint-down(768) {
       padding-left: 60px;
+      margin-bottom: 16px;
+      font-size: 78px;
+      line-height: 1.13;
+    }
+
+    @include media-breakpoint-down(375) {
+      padding-left: 32px;
+      margin-bottom: 8px;
+      font-size: 40px;
+      line-height: 1.2;
     }
 
     &__part {
       @include text-desk;
       display: inline-block;
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up(1440) {
         font-size: 58px;
       }
 
-      @include media-breakpoint-down(xl) {
+      @include media-breakpoint-down(1920) {
         font-size: 44px;
       }
 
-      @include media-breakpoint-down(l) {
+      @include media-breakpoint-down(1440) {
         font-size: 40px;
       }
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(768) {
         display: none;
       }
     }
@@ -73,19 +93,19 @@
       display: inline-block;
       transform: translate3d(0, 0, 0);
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up(1440) {
         font-size: 140px;
       }
 
-      @include media-breakpoint-down(xl) {
+      @include media-breakpoint-down(1920) {
         font-size: 112px;
       }
 
-      @include media-breakpoint-down(l) {
+      @include media-breakpoint-down(1440) {
         font-size: 98px;
       }
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(768) {
         display: none;
       }
     }

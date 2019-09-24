@@ -1,11 +1,23 @@
 @import "mixins", "media-mixins", "var";
 
 .header {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  position: relative;
+  padding: 72px 0;
 
-  @include media-breakpoint-down(sm) {
-    padding: 74px 60px 80px;
+  @include media-breakpoint-down(1440) {
+    padding: 56px 0;
+  }
+
+  @include media-breakpoint-down(1366) {
+    padding: 48px 0;
+  }
+
+  @include media-breakpoint-down(768) {
+    padding: 72px 0;
+  }
+
+  @include media-breakpoint-down(375) {
+    padding: 40px 0;
   }
 
   &__logo {
@@ -14,18 +26,94 @@
     letter-spacing: 0.6px;
     color: #fff;
     cursor: pointer;
+
+    @include media-breakpoint-down(768) {
+      font-size: 24px;
+      letter-spacing: 0.9px;
+    }
+
+    @include media-breakpoint-down(375) {
+      font-size: 16px;
+      letter-spacing: 0.6px;
+    }
   }
 
   &-nav {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(768) {
       display: none;
     }
 
-    &_mob {
+    &__burger {
+      @include btn-reset;
+      width: 48px;
+      height: 28px;
+
       display: none;
-      
-      @include media-breakpoint-down(sm) {
-        display: block;
+
+      background-image: url(../../../../assets/icons/burger-menu.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+
+      @include media-breakpoint-down(768) {
+        display: flex;
+      }
+
+      @include media-breakpoint-down(375) {
+        width: 24px;
+        height: 14px;
+      }
+    }
+
+    &-mob {
+      width: 100%;
+      height: 100vh;
+      padding-top: 72px;
+      padding-bottom: 72px;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #000;
+
+      &__item {
+        margin-bottom: 24px;
+        font-family: $t-ff;
+        font-size: 78px;
+        font-weight: 100;
+        line-height: 1.13;
+        color: #fff;
+
+        @include media-breakpoint-down(375) {
+          font-size: 40px;
+          line-height: 1.2;
+        }
+      }
+
+      &-header {
+        width: 100%;
+      }
+
+      @include media-breakpoint-down(375) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      &__close {
+        @include btn-reset;
+        width: 28px;
+        height: 28px;
+
+        background-image: url(../../../../assets/icons/burger-menu-close.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @include media-breakpoint-down(375) {
+          width: 14px;
+          height: 14px;
+        }
       }
     }
 
@@ -62,7 +150,7 @@ home :host {
   position: -webkit-sticky;
   position: sticky;
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(768) {
     position: fixed;
   }
 }

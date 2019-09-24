@@ -1,5 +1,5 @@
-<div class="header pw123">
-  <div class="wrapper flex-between">
+<div class="header">
+  <div class="wrapper container flex-between">
 
     <p class="header__logo">Anna Yushchenko</p>
 
@@ -9,10 +9,19 @@
       <div class="header-nav__item">Contact</div>
     </nav>
 
-    <nav class="header-nav_mob flex-between">
-      <div class="header-nav__item">Information</div>
-      <div class="header-nav__item">Work</div>
-      <div class="header-nav__item">Contact</div>
+    <button *ngIf="!navOpen" class="header-nav__burger" (click)="navOpen = true"></button>
+
+    <nav *ngIf="navOpen" class="header-nav-mob container flex-column">
+      <div class="header-nav-mob-header flex-between">
+        <p class="header__logo">Anna Yushchenko</p>
+        <button class="header-nav-mob__close" (click)="navOpen = false"></button>
+      </div>
+      <div class="flex-column">
+        <div class="header-nav-mob__item">Information</div>
+        <div class="header-nav-mob__item">Work</div>
+        <div class="header-nav-mob__item">Contact</div>
+      </div>
+      <contacts></contacts>
     </nav>
 
   </div>

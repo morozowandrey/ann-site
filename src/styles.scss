@@ -1,8 +1,9 @@
 // base
 @import "reset",
         "var",
-      "./app/styles/base.scss",
+        "./app/styles/base.scss",
         "mixins", 
+        "media-mixins",
         "helpers", 
         "animations";
 

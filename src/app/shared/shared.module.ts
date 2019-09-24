@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // Components
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   imports: [
@@ -11,11 +12,13 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ContactsComponent
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ContactsComponent
   ]
 })
 export class SharedModule { }
