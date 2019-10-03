@@ -7,17 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  isMobileSize:boolean = false;
+  isMobileSize: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(window.screen.availWidth);
-    
     window.screen.availWidth <= 768 ? this.isMobileSize = true : this.isMobileSize = false;
-
-    console.log(this.isMobileSize);
-    
   }
 
 }
