@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ann-site';
+  top: any;
+  left: any;
+
+  @HostListener('document:mousemove', ['$event'])
+  onMousemove($event) {
+    this.top = ($event.pageY - 85) + "px";
+    this.left = ($event.pageX - 85) + "px";
+  }
 }

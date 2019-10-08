@@ -24,39 +24,27 @@
   }
 }
 
-.marqueeAnimBox {
-  animation: marqueeAnimBox 10s linear forwards;
-}
-@keyframes marqueeAnimBox {
-  from {
-    transform: translateX(1316px);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
 .marqueeAnimFirst {
-  animation: marqueeAnimFirst 20s linear infinite;
+  animation: marqueeAnimFirst 15s linear infinite;
 }
 @keyframes marqueeAnimFirst {
   from {
-    transform: translateX(100%);
+    transform: translateX(80%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-120%);
   }
 }
 
 .marqueeAnimSecond {
-  animation: marqueeAnimSecond 20s linear infinite;
-  animation-delay: 10s;
+  animation: marqueeAnimSecond 15s linear infinite;
+  animation-delay: 7.5s;
 }
 @keyframes marqueeAnimSecond {
   from {
-    transform: translateX(0%);
+    transform: translateX(-20%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-220%);
   }
 }

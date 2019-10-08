@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  cursor: url("src/assets/cursor/custom-cursor-plus.svg") 27 27, auto;
 }
 
 html {
@@ -40,4 +41,14 @@ ul {
 button {
   outline: none;
   cursor: pointer;
+}
+
+.header__logo {
+  &:hover {
+    .cursor {
+      transform: scale(0.8);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+  }
 }
