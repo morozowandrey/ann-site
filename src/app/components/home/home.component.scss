@@ -132,9 +132,7 @@
 
     &-mover {
       @include title-gray;
-
-      display: inline-block;
-      transform: translate3d(0, 0, 0);
+      line-height: 1.1;
 
       @include media-breakpoint-up(1440) {
         font-size: 140px;

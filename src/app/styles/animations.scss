@@ -25,6 +25,8 @@
 }
 
 .marqueeAnimFirst {
+  display: inline-block;
+  transform: translate3d(0, 0, 0);
   animation: marqueeAnimFirst 15s linear infinite;
 }
 @keyframes marqueeAnimFirst {
@@ -37,6 +39,8 @@
 }
 
 .marqueeAnimSecond {
+  display: inline-block;
+  transform: translate3d(0, 0, 0);
   animation: marqueeAnimSecond 15s linear infinite;
   animation-delay: 7.5s;
 }
@@ -46,5 +50,22 @@
   }
   to {
     transform: translateX(-220%);
+  }
+}
+
+.text-gradient-animation {
+  color: #f35626;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradientAnimation 5s infinite linear;
+}
+
+@-webkit-keyframes textGradientAnimation {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
   }
 }

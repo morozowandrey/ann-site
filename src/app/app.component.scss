@@ -10,8 +10,8 @@
   border-radius: 100%;
   top: 0;
   left: 0;
-  transition-duration: 400ms;
-  transition-timing-function: ease-out;
+  transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
   opacity: 0.5;
   cursor: url("../assets/cursor/custom-cursor-plus.svg") 27 27, auto;
 }
