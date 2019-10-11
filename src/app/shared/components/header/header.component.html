@@ -6,7 +6,7 @@
     <nav class="header-nav flex-between">
       <div class="header-nav__item">Information</div>
       <div class="header-nav__item">Work</div>
-      <div class="header-nav__item">Contact</div>
+      <div class="header-nav__item" routerLink="/contacts">Contact</div>
     </nav>
 
     <button *ngIf="!navOpen" class="header-nav__burger" (click)="navOpen = true"></button>
@@ -17,9 +17,9 @@
         <button class="header-nav-mob__close" (click)="navOpen = false"></button>
       </div>
       <div class="flex-column">
-        <div class="header-nav-mob__item">Information</div>
-        <div class="header-nav-mob__item">Work</div>
-        <div class="header-nav-mob__item">Contact</div>
+        <div class="header-nav-mob__item" (click)="navOpen = false">Information</div>
+        <div class="header-nav-mob__item" (click)="navOpen = false">Work</div>
+        <div class="header-nav-mob__item" routerLink="/contacts" (click)="navOpen = false">Contact</div>
       </div>
       <contacts></contacts>
     </nav>

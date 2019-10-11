@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  navOpen:boolean = false;
+  navOpen: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

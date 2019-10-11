@@ -21,3 +21,12 @@
     transform: scale(1.2);
   }
 }
+
+.header-top {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.header-bottom {
+}
