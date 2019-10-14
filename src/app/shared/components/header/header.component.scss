@@ -63,6 +63,21 @@
         width: 24px;
         height: 14px;
       }
+
+      &_desk {
+        @include label-sm;
+        display: flex;
+        text-transform: uppercase;
+        background: none;
+
+        &:hover {
+          color: #fff;
+        }
+
+        @include media-breakpoint-down(768) {
+          display: none;
+        }
+      }
     }
 
     &-mob {

@@ -2,16 +2,52 @@
 
 .contacts {
   width: 100%;
+  padding: 70px 0;
+
+  @include media-breakpoint-down(1536) {
+    padding: 56px 0;
+  }
+
+  @include media-breakpoint-down(1440) {
+    padding: 48px 0;
+  }
+
+  @include media-breakpoint-down(768) {
+    padding: 72px 0;
+  }
+
+  @include media-breakpoint-down(375) {
+    padding: 40px 0;
+  }
 
   &__item {
-    margin-right: 72px;
-    padding-left: 34px;
     position: relative;
 
-    font-family: $r-ff;
+    margin-right: 104px;
+    padding-left: 34px;
     font-size: 24px;
     line-height: 0.83;
+
+    font-family: $r-ff;
     color: $gray;
+
+    &:hover {
+      color: #fff;
+    }
+
+    @include media-breakpoint-down(1536) {
+      margin-right: 62px;
+      padding-left: 20px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    @include media-breakpoint-down(768) {
+      margin-right: 72px;
+      padding-left: 34px;
+      font-size: 24px;
+      line-height: 0.83;
+    }
 
     @include media-breakpoint-down(375) {
       margin-right: 40px;
@@ -25,12 +61,22 @@
       width: 18px;
       height: 18px;
       position: absolute;
-      top: 0;
+      top: 1px;
       left: 0;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
       cursor: pointer;
+
+      @include media-breakpoint-down(1536) {
+        width: 12px;
+        height: 12px;
+      }
+
+      @include media-breakpoint-down(768) {
+        width: 18px;
+        height: 18px;
+      }
 
       @include media-breakpoint-down(375) {
         width: 12px;
@@ -40,26 +86,32 @@
 
     &:nth-child(1) {
       &::before {
-        background-image: url(../../../../assets/icons/fb.svg);
+        background-image: url(../../../../assets/socials/fb.svg);
       }
     }
     &:nth-child(2) {
       &::before {
-        background-image: url(../../../../assets/icons/tg.svg);
+        background-image: url(../../../../assets/socials/tg.svg);
       }
     }
     &:nth-child(3) {
       &::before {
-        background-image: url(../../../../assets/icons/inst.png);
+        background-image: url(../../../../assets/socials/inst.svg);
       }
     }
     &:nth-child(4) {
       &::before {
-        background-image: url(../../../../assets/icons/arena.svg);
+        background-image: url(../../../../assets/socials/arena.svg);
       }
     }
     &:last-of-type {
       margin-right: 0;
     }
   }
+}
+
+.contacts-page :host {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }

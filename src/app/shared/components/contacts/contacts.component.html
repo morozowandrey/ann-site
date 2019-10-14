@@ -1,6 +1,20 @@
 <div class="contacts">
-  <a href="https://www.facebook.com/annayushch" class="contacts__item">Fb</a>
-  <a href="https://telegram.me/annayushch" class="contacts__item">Inst</a>
-  <a href="https://www.instagram.com/annayushch/" class="contacts__item">Tg</a>
-  <!-- <a href="https://www.are.na/anna-yushchenko" class="contacts__item">Arena</a> -->
+  <div class="container wrapper">
+    <a href="https://www.facebook.com/annayushch" target="_blank" class="contacts__item">
+      <span *ngIf="isMobile">Fb</span>
+      <span *ngIf="!isMobile">Facebook</span>
+    </a>
+    <a href="https://telegram.me/annayushch" target="_blank" class="contacts__item">
+      <span *ngIf="isMobile">Tg</span>
+      <span *ngIf="!isMobile">Telegram</span>
+    </a>
+    <a href="https://www.instagram.com/annayushch/" target="_blank" class="contacts__item">
+      <span *ngIf="isMobile">Inst</span>
+      <span *ngIf="!isMobile">Instagram</span>
+    </a>
+    <a href="https://www.are.na/anna-yushchenko" target="_blank" class="contacts__item">
+      <span *ngIf="isMobile">Ar</span>
+      <span *ngIf="!isMobile">Are.na</span>
+    </a>
+  </div>
 </div>
