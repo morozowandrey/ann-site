@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { ContactsPageComponent } from './components/contacts-page/contacts-page.component';
+import { InformationComponent } from './components/information/information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactsPageComponent
+    ContactsPageComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,

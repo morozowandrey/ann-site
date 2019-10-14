@@ -1,0 +1,27 @@
+<div class="information container wrapper">
+  <div class="information-content flex-between">
+
+    <div class="information-content-text">
+      In the
+      <span class="information-content-text__action-part" (mouseenter)="img1 == true" (mouseleave)="img1 == false">past
+        few years</span>, I’ve
+      mostly been working on corporate
+      websites, landing pages, and digital products.
+      In
+      total, I
+      was involved in more than
+      <span class="information-content-text__action-part" (mouseenter)="img1 == true" (mouseleave)="img1 == false">100
+        design projects</span>.
+    </div>
+
+    <div class="information-content-images">
+      <img class="information-content-images__img" *ngIf="!img1 && !img2" src="../../../assets/images/cv3x.png"
+        alt="Annas cv image">
+      <img class="information-content-images__img" *ngIf="img1" src="../../../assets/images/project-images3x.png"
+        alt="collage about Anna">
+      <img class="information-content-images__img" *ngIf="img2" src="../../../assets/images/project-images3x.png"
+        alt="100 projects collage">
+    </div>
+
+  </div>
+</div>

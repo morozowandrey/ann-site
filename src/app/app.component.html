@@ -1,6 +1,6 @@
 <header *ngIf="isMobileSize || !isHomePage" [ngClass]="{'header-top': isMobileSize }"></header>
 <router-outlet></router-outlet>
 
-<div class="cursor" [style.top]="top" [style.left]="left" [ngClass]="{'expand':expand}"></div>
+<div class="cursor" [style.top]="top" [style.left]="left"></div>
 <header *ngIf="!isMobileSize && isHomePage" [ngClass]="{'header-bottom': !isMobileSize}"></header>
 <!-- <footer></footer> -->

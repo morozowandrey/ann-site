@@ -3,6 +3,7 @@
 .header {
   position: relative;
   padding: 72px 0;
+  background-color: #000;
 
   @include media-breakpoint-down(1440) {
     padding: 56px 0;
@@ -21,10 +22,11 @@
   }
 
   &__logo {
-    font-family: $b-ff;
+    font-family: $r-ff;
     font-size: 16px;
     letter-spacing: 0.6px;
     color: #fff;
+    text-transform: uppercase;
 
     @include media-breakpoint-down(768) {
       font-size: 24px;
