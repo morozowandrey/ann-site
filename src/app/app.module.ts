@@ -7,13 +7,15 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { ContactsPageComponent } from './components/contacts-page/contacts-page.component';
 import { InformationComponent } from './components/information/information.component';
+import { RoutingPageComponent } from './components/routing-page/routing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactsPageComponent,
-    InformationComponent
+    InformationComponent,
+    RoutingPageComponent
   ],
   imports: [
     BrowserModule,

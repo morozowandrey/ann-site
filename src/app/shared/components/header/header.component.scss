@@ -1,7 +1,9 @@
 @import "mixins", "media-mixins", "var";
 
 .header {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  z-index: 102;
   padding: 72px 0;
   background-color: #000;
 
@@ -161,7 +163,7 @@ home :host {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 102;
+  z-index: 100;
   position: -webkit-sticky;
   position: sticky;
 

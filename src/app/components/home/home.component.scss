@@ -1,13 +1,13 @@
 @import "mixins", "media-mixins", "var", "animations";
 
 .home {
-  height: calc(100vh - 164px);
+  height: calc(100vh - 172px);
 
   @include media-breakpoint-down(1440) {
-    height: calc(100vh - 132px);
+    height: calc(100vh - 140px);
   }
   @include media-breakpoint-down(1366) {
-    height: calc(100vh - 116px);
+    height: calc(100vh - 124px);
   }
   @include media-breakpoint-down(768) {
     height: 100vh;

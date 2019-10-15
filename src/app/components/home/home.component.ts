@@ -9,7 +9,8 @@ export class HomeComponent implements OnInit {
 
   isMobileSize: boolean = false;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
     window.screen.availWidth <= 768 ? this.isMobileSize = true : this.isMobileSize = false;

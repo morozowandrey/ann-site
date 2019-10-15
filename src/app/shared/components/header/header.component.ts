@@ -9,7 +9,8 @@ export class HeaderComponent implements OnInit {
 
   navOpen: boolean = false;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
   }
