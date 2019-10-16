@@ -1,15 +1,15 @@
 @import "mixins", "media-mixins", "var", "animations";
 
 .home {
-  height: calc(100vh - 172px);
+  padding-top: 140px;
+  height: calc(100vh - 140px);
 
   @include media-breakpoint-down(1440) {
-    height: calc(100vh - 140px);
-  }
-  @include media-breakpoint-down(1366) {
-    height: calc(100vh - 124px);
+    padding-top: 80px;
+    height: calc(100vh - 108px);
   }
   @include media-breakpoint-down(768) {
+    padding-top: 0px;
     height: 100vh;
   }
 
@@ -28,20 +28,12 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-left: 148px;
-
-    @include media-breakpoint-down(1440) {
-      padding-left: 117px;
-    }
-
-    @include media-breakpoint-down(1366) {
-      padding-left: 123px;
-    }
+    padding-left: 104px;
 
     @include media-breakpoint-down(768) {
       flex-direction: column;
       padding-left: 60px;
-      margin-bottom: 80px;
+      margin-bottom: 72px;
     }
 
     @include media-breakpoint-down(375) {
@@ -52,13 +44,13 @@
 
   &__title {
     @include title-white;
-    margin-bottom: 74px;
+    margin-bottom: 56px;
     margin-right: 32px;
     font-size: 140px;
     line-height: 0.7;
 
     @include media-breakpoint-down(1440) {
-      margin-bottom: 19px;
+      margin-bottom: 24px;
       margin-right: 24px;
       font-size: 104px;
       line-height: 0.94;
@@ -70,14 +62,14 @@
     }
 
     @include media-breakpoint-down(768) {
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       margin-right: 0;
       font-size: 78px;
       line-height: 1.13;
     }
 
     @include media-breakpoint-down(375) {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-size: 40px;
       line-height: 1.2;
     }
@@ -100,12 +92,14 @@
     }
 
     @include media-breakpoint-down(768) {
-      margin-bottom: 40px;
+      font-size: 78px;
+      line-height: 1.13;
+      margin-bottom: 8px;
     }
 
     @include media-breakpoint-down(375) {
-      margin-bottom: 24px;
-      font-size: 24px;
+      margin-bottom: 6px;
+      font-size: 40px;
     }
 
     &_mob {
@@ -149,6 +143,10 @@
       @include media-breakpoint-down(768) {
         display: none;
       }
+    }
+
+    @include media-breakpoint-down(768) {
+      display: none;
     }
   }
 }

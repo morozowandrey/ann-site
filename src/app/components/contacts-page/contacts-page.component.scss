@@ -1,21 +1,22 @@
 @import "mixins", "media-mixins", "var";
 
 .contacts-page {
-  height: calc(100vh - 324px);
+  // height: calc(100vh - 324px);
+  height: 100vh;
   overflow: hidden;
 
   @include media-breakpoint-down(1440) {
-    height: calc(100vh - 264px);
+    // height: calc(100vh - 264px);
   }
   @include media-breakpoint-down(1366) {
-    height: calc(100vh - 232px);
+    // height: calc(100vh - 232px);
   }
   @include media-breakpoint-down(768) {
-    height: calc(100vh - 336px);
+    height: calc(100vh - 164px);
     align-items: flex-end;
   }
   @include media-breakpoint-down(375) {
-    height: calc(100vh - 198px);
+    height: calc(100vh - 100px);
   }
 
   &-content {

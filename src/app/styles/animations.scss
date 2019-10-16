@@ -54,8 +54,9 @@
 }
 
 .text-gradient-animation {
-  color: #f35626;
-  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  color: #ff0000;
+  // background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  background-image: -webkit-linear-gradient(92deg, #ff0000, #8dff00);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textGradientAnimation 5s infinite linear;

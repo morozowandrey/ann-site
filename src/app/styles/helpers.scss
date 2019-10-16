@@ -14,14 +14,8 @@
 }
 
 .container {
-  padding: 0 148px;
+  padding: 0 104px;
 
-  @include media-breakpoint-down(1440) {
-    padding: 0 117px;
-  }
-  @include media-breakpoint-down(1366) {
-    padding: 0 123px;
-  }
   @include media-breakpoint-down(768) {
     padding: 0 60px;
   }
