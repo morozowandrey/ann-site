@@ -25,9 +25,17 @@ $grid-breakpoints: (
 //    md
 //    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))
 //    md
-@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+@function breakpoint-next(
+  $name,
+  $breakpoints: $grid-breakpoints,
+  $breakpoint-names: map-keys($breakpoints)
+) {
   $n: index($breakpoint-names, $name);
-  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+  @return if(
+    $n < length($breakpoint-names),
+    nth($breakpoint-names, $n + 1),
+    null
+  );
 }
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.
@@ -64,12 +72,50 @@ $grid-breakpoints: (
   }
 }
 
+@mixin retina-media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: $min),
+      only screen and (min--moz-device-pixel-ratio: 2) and (min-width: $min),
+      only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: $min),
+      only screen and (min-device-pixel-ratio: 2) and (min-width: $min),
+      only screen and (min-resolution: 192dpi) and (min-width: $min),
+      only screen and (min-resolution: 2dppx) and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
 // Media of at most the maximum breakpoint width. No query for the largest breakpoint.
 // Makes the @content apply to the given breakpoint and narrower.
 @mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
   $max: breakpoint-max($name, $breakpoints);
   @if $max {
     @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin retina-media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: $max),
+      only screen and (min--moz-device-pixel-ratio: 2) and (max-width: $max),
+      only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: $max),
+      only screen and (min-device-pixel-ratio: 2) and (max-width: $max),
+      only screen and (min-resolution: 192dpi) and (max-width: $max),
+      only screen and (min-resolution: 2dppx) and (max-width: $max) {
       @content;
     }
   } @else {
