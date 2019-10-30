@@ -5,6 +5,18 @@
   height: 100vh;
   padding-top: 115px;
 
+  @include media-breakpoint-down(768) {
+    padding-top: 209px;
+  }
+
+  @include media-breakpoint-down(375) {
+    padding-top: 111px;
+  }
+
+  &-main {
+    height: 100%;
+  }
+
   &-content {
     width: 100%;
 
@@ -15,14 +27,19 @@
     &-text,
     &__action-part {
       @include text-desk_wide;
-      max-width: 1014px;
+      font-family: $t-ff;
+      max-width: 60%;
       margin-right: 77px;
       position: relative;
 
       @include media-breakpoint-down(1536) {
+        max-width: 55%;
         font-size: 42px;
         line-height: 1.33;
         margin-right: 124px;
+      }
+      @include media-breakpoint-down(1440) {
+        max-width: 60%;
       }
       @include media-breakpoint-down(1366) {
         font-size: 40px;
@@ -31,6 +48,7 @@
       }
       @include media-breakpoint-down(768) {
         line-height: 1.6;
+        max-width: 100%;
       }
       @include media-breakpoint-down(375) {
       }
@@ -38,6 +56,18 @@
       &__action-part {
         max-width: none;
         text-decoration: underline;
+        margin-right: 0;
+      }
+    }
+
+    &-text {
+      @include media-breakpoint-down(768) {
+        color: #fff;
+      }
+
+      @include media-breakpoint-down(375) {
+        font-size: 24px;
+        font-weight: 100;
         margin-right: 0;
       }
     }
@@ -66,14 +96,24 @@
       }
 
       &-content {
-        max-width: 351px;
+        max-width: 365px;
 
         &__text {
           @include text-mob;
+          line-height: 1.4;
           color: $gray;
+
+          @include media-breakpoint-down(375) {
+            font-size: 14px;
+            line-height: 1.25;
+          }
         }
         &__img {
           margin-right: 32px;
+
+          @include media-breakpoint-down(375) {
+            margin-right: 24px;
+          }
         }
       }
 
@@ -81,24 +121,62 @@
         justify-content: flex-start;
         margin-bottom: 62px;
 
+        @include media-breakpoint-down(375) {
+          margin-bottom: 33px;
+        }
+
         .information-content-mobile-content__text {
           max-width: 211px;
         }
         .information-content-mobile-content__img {
-          max-height: 116px;
+          max-height: 100px;
+        }
+
+        @include media-breakpoint-down(375) {
+          .information-content-mobile-content__text {
+            max-width: 113px;
+          }
+          .information-content-mobile-content__img {
+            max-height: 77px;
+          }
         }
       }
       &_bottom {
         justify-content: flex-end;
         margin-top: 93px;
 
+        @include media-breakpoint-down(375) {
+          margin-top: 44px;
+        }
+
         .information-content-mobile-content__text {
           max-width: 217px;
         }
         .information-content-mobile-content__img {
-          max-height: 81px;
+          max-height: 102px;
+        }
+
+        @include media-breakpoint-down(375) {
+          .information-content-mobile-content__text {
+            max-width: 101px;
+          }
+          .information-content-mobile-content__img {
+            max-height: 80px;
+          }
         }
       }
+    }
+  }
+
+  &-footer {
+    &__link {
+      @include text-mob;
+      min-height: 18px;
+      font-family: $t-ff;
+      display: block;
+      margin-bottom: 72px;
+      line-height: 0.83;
+      color: $gray;
     }
   }
 }
@@ -113,14 +191,28 @@
   @include media-breakpoint-down(375) {
     display: none;
   }
+
+  &_mob {
+    display: none;
+
+    @include media-breakpoint-down(375) {
+      display: inline;
+    }
+  }
 }
 
 @include media-breakpoint-down(768) {
   .after-err-1 {
     position: relative;
     &::after {
-      content: url(../../../assets/icons/arrow-up-left.svg);
+      content: "";
       position: absolute;
+
+      background-image: url(../../../assets/icons/arrow-up-left.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
       right: -40px;
       top: -40px;
       width: 28px;
@@ -130,12 +222,39 @@
   .after-err-2 {
     position: relative;
     &::after {
-      content: url(../../../assets/icons/arrow-down-left.svg);
+      content: "";
       position: absolute;
+
+      background-image: url(../../../assets/icons/arrow-down-left.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
       right: -40px;
       bottom: -40px;
       width: 28px;
       height: 58px;
+    }
+  }
+}
+
+@include media-breakpoint-down(375) {
+  .after-err-1 {
+    &::after {
+      right: -20px;
+      top: -17px;
+
+      width: 14px;
+      height: 29px;
+    }
+  }
+  .after-err-2 {
+    &::after {
+      right: -20px;
+      bottom: -17px;
+
+      width: 14px;
+      height: 29px;
     }
   }
 }
