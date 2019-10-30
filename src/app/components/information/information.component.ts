@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent implements OnInit {
-  img1: boolean = false;
-  img2: boolean = false;
+  cvImg: boolean = false;
+  projectsImg: boolean = false;
 
   constructor() { }
 
