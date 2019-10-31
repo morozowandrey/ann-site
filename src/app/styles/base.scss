@@ -43,6 +43,10 @@ button {
   cursor: pointer;
 }
 
+main {
+  position: relative;
+}
+
 .header__logo {
   &:hover {
     .cursor {

@@ -24,6 +24,26 @@
   }
 }
 
+.vertical-padding-container {
+  padding: 56px 0;
+
+  @include media-breakpoint-down(1440) {
+    padding: 40px 0;
+  }
+
+  @include media-breakpoint-down(768) {
+    padding: 56px 0;
+  }
+
+  @include media-breakpoint-down(375) {
+    padding: 40px 0;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;

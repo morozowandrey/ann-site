@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { scrollTo } from '../../../helpers/scrollTo';
 
 @Component({
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
@@ -13,6 +14,10 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  scrollTo(target) {
+    scrollTo(target);
   }
 
   // toggleNav() {

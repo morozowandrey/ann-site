@@ -7,7 +7,9 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { ContactsPageComponent } from './components/contacts-page/contacts-page.component';
 import { InformationComponent } from './components/information/information.component';
-import { RoutingPageComponent } from './components/routing-page/routing-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProjectComponent } from './components/project/project.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { RoutingPageComponent } from './components/routing-page/routing-page.com
     HomeComponent,
     ContactsPageComponent,
     InformationComponent,
-    RoutingPageComponent
+    HomePageComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

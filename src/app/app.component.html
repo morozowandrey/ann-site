@@ -1,4 +1,6 @@
-<router-outlet></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
 
 <!-- <div class="cursor" [style.top]="top" [style.left]="left"></div> -->
 <!-- <footer></footer> -->
