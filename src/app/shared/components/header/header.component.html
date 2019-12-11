@@ -1,19 +1,20 @@
-<div class="header vertical-padding-container" id="header">
-  <div class="wrapper container flex-between">
+<div class="header-sticky">
+  <div class="header vertical-padding-container" id="header">
+    <div class="wrapper container flex-between">
 
-    <a (click)="scrollTo('homeSection')" class="header__logo">Anna Yushchenko</a>
-    <!-- <a routerLink="/contacts" class="header__logo">contacts</a> -->
+      <a (click)="scrollTo('homeSection')" class="header__logo">Anna Yushchenko</a>
+      <!-- <a routerLink="/contacts" class="header__logo">contacts</a> -->
 
-    <!-- <nav class="header-nav flex-between">
+      <!-- <nav class="header-nav flex-between">
       <div class="header-nav__item">Information</div>
       <div class="header-nav__item">Work</div>
       <div class="header-nav__item" routerLink="/contacts">Contact</div>
     </nav> -->
 
-    <button *ngIf="!navOpen" class="header-nav__burger header-nav__burger_desk" (click)="navOpen = true">menu</button>
-    <button *ngIf="!navOpen" class="header-nav__burger" (click)="navOpen = true"></button>
+      <button *ngIf="!navOpen" class="header-nav__burger header-nav__burger_desk" (click)="navOpen = true">menu</button>
+      <button *ngIf="!navOpen" class="header-nav__burger" (click)="navOpen = true"></button>
 
-    <!-- <nav *ngIf="navOpen" class="header-nav-mob container flex-column">
+      <!-- <nav *ngIf="navOpen" class="header-nav-mob container flex-column">
       <div class="header-nav-mob-header flex-between">
         <p class="header__logo">Anna Yushchenko</p>
         <button class="header-nav-mob__close" (click)="navOpen = false"></button>
@@ -26,5 +27,6 @@
       <contacts></contacts>
     </nav> -->
 
+    </div>
   </div>
 </div>
