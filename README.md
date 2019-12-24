@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Firebase deploy
 
-# initial deploy
+### initial deploy
 
 1. firebase login
 2. firebase init
@@ -36,7 +36,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 4. ng bulid
 5. firebase deploy
 
-# regular deploy
+### regular deploy
 
-4. ng bulid
-5. firebase deploy
+1. ng bulid
+2. firebase deploy
