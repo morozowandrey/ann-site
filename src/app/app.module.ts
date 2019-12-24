@@ -10,6 +10,7 @@ import { InformationComponent } from './components/information/information.compo
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProjectComponent } from './components/project/project.component';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProjectComponent } from './components/project/project.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
+    AngularFullpageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

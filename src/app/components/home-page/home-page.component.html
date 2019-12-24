@@ -1,5 +1,11 @@
-<home></home>
-<information></information>
-<section class="section-1"></section>
-<section class="section-2"></section>
-<section class="section-3"></section>
+<div
+  fullpage
+  class="home-page"
+  id="fullpage"
+  [options]="config"
+  (ref)="getRef($event)"
+  #fullpageRef
+>
+  <home role="page" class="section section-0"></home>
+  <information role="page" class="section section-13"></information>
+</div>

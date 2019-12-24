@@ -1,17 +1,6 @@
-.section-1 {
-  height: 90vh;
-  width: 100%;
-  background-color: green;
-}
+@import "~fullpage.js/dist/fullpage.min.css";
 
-.section-2 {
-  height: 90vh;
-  width: 100%;
-  background-color: orange;
-}
-
-.section-3 {
-  height: 90vh;
-  width: 100%;
-  background-color: blueviolet;
+.home-page {
+  position: relative;
+  overflow: hidden;
 }
