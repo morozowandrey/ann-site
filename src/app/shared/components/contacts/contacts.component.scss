@@ -1,19 +1,25 @@
 @import "mixins", "media-mixins", "var";
 
+.contacts-page :host {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  @include media-breakpoint-down(768) {
+    position: initial;
+  }
+}
+
 .contacts {
   width: 100%;
-  padding: 70px 0;
-
-  @include media-breakpoint-down(1536) {
-    padding: 56px 0;
-  }
+  padding: 40px 104px;
 
   @include media-breakpoint-down(1440) {
-    padding: 48px 0;
+    padding: 24px 104px;
   }
 
   @include media-breakpoint-down(768) {
-    padding: 72px 0;
+    padding: 64px 0px;
   }
 
   @include media-breakpoint-down(375) {
@@ -108,10 +114,4 @@
       margin-right: 0;
     }
   }
-}
-
-.contacts-page :host {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
 }

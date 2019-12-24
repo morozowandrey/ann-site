@@ -1,5 +1,9 @@
 <main [@routeAnimations]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
+  <app-header
+    *ngIf="isHeaderFixed != null"
+    [ngClass]="{ headerFadeIn: isHeaderFixed, headerFadeOut: !isHeaderFixed }"
+  ></app-header>
 </main>
 
 <!-- <div class="cursor" [style.top]="top" [style.left]="left"></div> -->

@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
+import { ReactiveService } from "src/app/services/reactive.service";
 
 @Component({
   selector: "home-page",
@@ -8,13 +9,19 @@ import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 export class HomePageComponent implements OnInit {
   config: any;
   fullpage_api: any;
+  isHeaderFixed: boolean = false;
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
-  constructor() {
+  constructor(public reactiveService: ReactiveService) {
     this.config = {
       licenseKey: null,
-      anchors: ["firstPage", "secondPage"],
-      navigation: false
+      anchors: ["main", "information"],
+      navigation: false,
+      onLeave: (index, nextIndex, direction) => {
+        if (index.index === 1) this.reactiveService.isHeaderSticky.next(false);
+        if (direction === "down")
+          this.reactiveService.isHeaderSticky.next(true);
+      }
     };
   }
 

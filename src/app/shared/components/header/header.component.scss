@@ -1,17 +1,44 @@
 @import "mixins", "media-mixins", "var";
 
+:host {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
 .header {
   position: absolute;
   width: 100%;
   z-index: 102;
   background-color: #000;
 
+  &-padding-container {
+    padding: 40px 0 24px;
+
+    @include media-breakpoint-down(1440) {
+      padding: 24px 0;
+    }
+
+    @include media-breakpoint-down(768) {
+      padding: 40px 0;
+    }
+
+    @include media-breakpoint-down(375) {
+      padding: 24px 0;
+    }
+  }
+
   &__logo {
     font-family: $r-ff;
-    font-size: 16px;
+    font-size: 24px;
     letter-spacing: 1px;
     color: #fff;
     text-transform: uppercase;
+
+    @include media-breakpoint-down(1440) {
+      font-size: 16px;
+      letter-spacing: 0.9px;
+    }
 
     @include media-breakpoint-down(768) {
       font-size: 24px;
@@ -57,12 +84,17 @@
         text-transform: uppercase;
         background: none;
 
-        font-size: 16px;
+        font-size: 24px;
         letter-spacing: 1px;
         line-height: 1.3;
 
         &:hover {
           color: #fff;
+        }
+
+        @include media-breakpoint-down(1440) {
+          font-size: 16px;
+          letter-spacing: 0.9px;
         }
 
         @include media-breakpoint-down(768) {
@@ -143,18 +175,5 @@
         color: #fff;
       }
     }
-  }
-}
-
-home :host .header-sticky {
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 100;
-  position: -webkit-sticky;
-  position: sticky;
-
-  @include media-breakpoint-down(768) {
-    position: fixed;
   }
 }
