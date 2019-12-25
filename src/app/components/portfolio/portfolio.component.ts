@@ -38,9 +38,7 @@ export class PortfolioComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(window.innerHeight);
-  }
+  ngOnInit() {}
 
   projectEnter(i) {
     if (window.innerWidth >= 768) {

@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
   constructor(public reactiveService: ReactiveService) {
     this.config = {
       licenseKey: null,
-      anchors: ["main", "information", "portfolio"],
+      anchors: ["main", "information", "portfolio", "contacts"],
       navigation: false,
       scrollOverflow: true,
       onLeave: (index, nextIndex, direction) => {
@@ -27,7 +27,6 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {}
-
   getRef(fullPageRef) {
     // set ref (fullpage_api) for fullpage.js to use API methods in future
     this.fullpage_api = fullPageRef;
