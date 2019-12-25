@@ -11,8 +11,10 @@ export class ContactsPageComponent implements OnInit {
   constructor(public router: Router) {}
 
   ngOnInit() {
-    this.router.url.indexOf("/#") > -1
-      ? (this.isHomePage = true)
-      : (this.isHomePage = false);
+    if (this.router.url === "/" || this.router.url.indexOf("/#") > -1) {
+      this.isHomePage = true;
+    } else {
+      this.isHomePage = false;
+    }
   }
 }
