@@ -1,0 +1,107 @@
+@import "mixins", "media-mixins", "var";
+
+.portfolio {
+  &-wrapper {
+    height: 100%;
+    padding-top: 355px;
+    display: flex;
+
+    @include media-breakpoint-down(1440) {
+      padding-top: 200px;
+    }
+    @include media-breakpoint-down(768) {
+      padding-top: 358px;
+    }
+    @include media-breakpoint-down(375) {
+      padding-top: 220px;
+    }
+  }
+
+  &-list {
+    justify-content: baseline;
+
+    &-item {
+      position: relative;
+      margin-bottom: 80px;
+      cursor: pointer;
+
+      @include media-breakpoint-down(1440) {
+        margin-bottom: 56px;
+      }
+
+      @include media-breakpoint-down(768) {
+        margin-bottom: 60px;
+      }
+      @include media-breakpoint-down(375) {
+        margin-bottom: 40px;
+      }
+
+      &__title {
+        @include text-desk_wide;
+        color: #fff;
+        margin-top: 0;
+        margin-bottom: 16px;
+        line-height: 1;
+
+        @include media-breakpoint-down(1440) {
+          @include text-desk;
+          margin-bottom: 12px;
+          line-height: 38px;
+
+          font-size: 42px;
+          color: #fff;
+        }
+        @include media-breakpoint-down(1366) {
+          font-size: 40px;
+        }
+        @include media-breakpoint-down(768) {
+          font-size: 78px;
+          line-height: 1;
+        }
+        @include media-breakpoint-down(375) {
+          font-size: 40px;
+          margin-bottom: 8px;
+        }
+      }
+
+      &__subtitle {
+        @include text-mob;
+        color: $gray;
+
+        @include media-breakpoint-down(1440) {
+          @include label-gray;
+        }
+        @include media-breakpoint-down(768) {
+          @include text-mob;
+          color: $gray;
+        }
+        @include media-breakpoint-down(375) {
+          font-size: 16px;
+          max-width: 205px;
+        }
+      }
+
+      &__img {
+        position: absolute;
+        top: 0;
+        z-index: 105;
+
+        max-width: 800px;
+
+        transform-style: preserve-3d;
+        transform: translateX(-150%);
+
+        @include media-breakpoint-down(1440) {
+          max-width: 500px;
+        }
+        @include media-breakpoint-down(1366) {
+          max-width: 500px;
+        }
+      }
+    }
+  }
+}
+.portfolio-list-item_hover .portfolio-list-item__img {
+  display: block;
+  z-index: 10;
+}

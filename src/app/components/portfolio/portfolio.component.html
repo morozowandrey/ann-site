@@ -1,0 +1,24 @@
+<div class="portfolio container wrapper">
+  <div class="portfolio-wrapper">
+    <div class="portfolio-list flex-column">
+      <div
+        *ngFor="let project of projects; let i = index"
+        class="portfolio-list-item"
+        (mouseenter)="projectEnter($event)"
+        (mouseleave)="projectLeave($event)"
+      >
+        <h3 class="portfolio-list-item__title">{{ project.title }}</h3>
+        <p class="portfolio-list-item__subtitle">
+          {{ project.subtitle }}
+        </p>
+        <img
+          class="portfolio-list-item__img"
+          src="{{ project.imgSrc }}"
+          alt="{{ project.title }} image"
+        />
+      </div>
+    </div>
+
+    <div class="portfolio-scene"></div>
+  </div>
+</div>

@@ -15,8 +15,9 @@ export class HomePageComponent implements OnInit {
   constructor(public reactiveService: ReactiveService) {
     this.config = {
       licenseKey: null,
-      anchors: ["main", "information"],
+      anchors: ["main", "information", "portfolio"],
       navigation: false,
+      scrollOverflow: true,
       onLeave: (index, nextIndex, direction) => {
         if (index.index === 1) this.reactiveService.isHeaderSticky.next(false);
         if (direction === "down")
