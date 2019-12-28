@@ -10,6 +10,7 @@ export class HomePageComponent implements OnInit {
   config: any;
   fullpage_api: any;
   isHeaderFixed: boolean = false;
+  isNavOpen: boolean = false;
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
   constructor(public reactiveService: ReactiveService) {
@@ -26,7 +27,10 @@ export class HomePageComponent implements OnInit {
     };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.reactiveService.isNavOpen.subscribe(val => (this.isNavOpen = val));
+  }
+
   getRef(fullPageRef) {
     // set ref (fullpage_api) for fullpage.js to use API methods in future
     this.fullpage_api = fullPageRef;

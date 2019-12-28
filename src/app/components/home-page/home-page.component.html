@@ -5,6 +5,7 @@
   [options]="config"
   (ref)="getRef($event)"
   #fullpageRef
+  [ngClass]="{ 'home-page_blur': isNavOpen }"
 >
   <home role="page" class="section"></home>
   <information role="page" class="section"></information>

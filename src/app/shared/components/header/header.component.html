@@ -1,40 +1,52 @@
 <div class="header header-padding-container" id="header">
   <div class="wrapper container flex-between">
-    <a (click)="scrollTo('homeSection')" class="header__logo"
-      >Anna Yushchenko</a
+    <a
+      (click)="scrollTo('homeSection')"
+      routerLink="/"
+      class="header__logo"
+      *ngIf="!navOpen"
     >
-    <!-- <a routerLink="/contacts" class="header__logo">contacts</a> -->
-
-    <!-- <nav class="header-nav flex-between">
-      <div class="header-nav__item">Information</div>
-      <div class="header-nav__item">Work</div>
-      <div class="header-nav__item" routerLink="/contacts">Contact</div>
-    </nav> -->
+      Anna Yushchenko
+    </a>
 
     <button
       *ngIf="!navOpen"
-      class="header-nav__burger header-nav__burger_desk"
-      (click)="navOpen = true"
-    >
-      menu
-    </button>
-    <button
-      *ngIf="!navOpen"
-      class="header-nav__burger"
-      (click)="navOpen = true"
+      class="header__switch"
+      (click)="toggleNav()"
     ></button>
 
-    <!-- <nav *ngIf="navOpen" class="header-nav-mob container flex-column">
-      <div class="header-nav-mob-header flex-between">
-        <p class="header__logo">Anna Yushchenko</p>
-        <button class="header-nav-mob__close" (click)="navOpen = false"></button>
+    <nav *ngIf="navOpen" class="header-nav container flex-column">
+      <div class="header-nav-container">
+        <p
+          class="header-nav-container__item"
+          routerLink="/"
+          (click)="toggleNav()"
+        >
+          Anna Yushchenko
+        </p>
+        <p
+          class="header-nav-container__item"
+          routerLink="/"
+          (click)="toggleNav()"
+        >
+          Information
+        </p>
+        <p
+          class="header-nav-container__item"
+          routerLink="/"
+          (click)="toggleNav()"
+        >
+          Work
+        </p>
+        <p
+          class="header-nav-container__item"
+          routerLink="/contacts"
+          (click)="toggleNav()"
+        >
+          Contact
+        </p>
+        <button class="header__switch" (click)="toggleNav()"></button>
       </div>
-      <div class="flex-column">
-        <div class="header-nav-mob__item" (click)="navOpen = false">Information</div>
-        <div class="header-nav-mob__item" (click)="navOpen = false">Work</div>
-        <div class="header-nav-mob__item" routerLink="/contacts" (click)="navOpen = false">Contact</div>
-      </div>
-      <contacts></contacts>
-    </nav> -->
+    </nav>
   </div>
 </div>

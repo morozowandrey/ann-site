@@ -1,2 +1,5 @@
 .home-page {
+  &_blur {
+    filter: blur(40px);
+  }
 }
