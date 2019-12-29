@@ -10,10 +10,8 @@ import { SharedModule } from "./shared/shared.module";
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
-import { ContactsPageComponent } from "./components/contacts-page/contacts-page.component";
 import { InformationComponent } from "./components/information/information.component";
 import { HomePageComponent } from "./components/home-page/home-page.component";
-import { ProjectComponent } from "./components/project/project.component";
 
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
 
@@ -21,10 +19,8 @@ import { PortfolioComponent } from "./components/portfolio/portfolio.component";
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactsPageComponent,
     InformationComponent,
     HomePageComponent,
-    ProjectComponent,
     PortfolioComponent
   ],
   imports: [

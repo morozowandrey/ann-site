@@ -1,51 +1,33 @@
 <div class="header header-padding-container" id="header">
   <div class="wrapper container flex-between">
-    <a
-      (click)="scrollTo('homeSection')"
-      routerLink="/"
-      class="header__logo"
-      *ngIf="!navOpen"
-    >
+    <a (click)="moveToSection('main')" class="header__logo" *ngIf="!navOpen">
       Anna Yushchenko
     </a>
 
     <button
       *ngIf="!navOpen"
       class="header__switch"
-      (click)="toggleNav()"
+      (click)="toggleNav(false)"
     ></button>
 
     <nav *ngIf="navOpen" class="header-nav container flex-column">
       <div class="header-nav-container">
-        <p
-          class="header-nav-container__item"
-          routerLink="/"
-          (click)="toggleNav()"
-        >
+        <p class="header-nav-container__item" (click)="toggleNav('main')">
           Anna Yushchenko
         </p>
         <p
           class="header-nav-container__item"
-          routerLink="/"
-          (click)="toggleNav()"
+          (click)="toggleNav('information')"
         >
           Information
         </p>
-        <p
-          class="header-nav-container__item"
-          routerLink="/"
-          (click)="toggleNav()"
-        >
+        <p class="header-nav-container__item" (click)="toggleNav('work')">
           Work
         </p>
-        <p
-          class="header-nav-container__item"
-          routerLink="/contacts"
-          (click)="toggleNav()"
-        >
+        <p class="header-nav-container__item" (click)="toggleNav('contacts')">
           Contact
         </p>
-        <button class="header__switch" (click)="toggleNav()"></button>
+        <button class="header__switch" (click)="toggleNav(false)"></button>
       </div>
     </nav>
   </div>

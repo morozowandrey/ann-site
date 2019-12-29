@@ -2,9 +2,8 @@
   fullpage
   class="home-page"
   id="fullpage"
-  [options]="config"
+  [options]="fullPageConfig"
   (ref)="getRef($event)"
-  #fullpageRef
   [ngClass]="{ 'home-page_blur': isNavOpen }"
 >
   <home role="page" class="section"></home>

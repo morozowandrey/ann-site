@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   title = "ann-site";
   top: any;
   left: any;
-  isHeaderFixed: boolean = null;
+  isHeaderFixed: boolean = false;
 
   constructor(public reactiveService: ReactiveService) {}
 
@@ -27,6 +27,15 @@ export class AppComponent implements OnInit {
     this.reactiveService.isHeaderSticky.subscribe(
       val => (this.isHeaderFixed = val)
     );
+  }
+
+  ngAfterViewInit(): void {
+    this.reactiveService.fullPageApi.subscribe(api => {
+      if (api) {
+        if (api.getActiveSection().anchor === "main")
+          this.isHeaderFixed = false;
+      }
+    });
   }
 
   prepareRoute(outlet: RouterOutlet) {

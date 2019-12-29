@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ReactiveService } from "src/app/services/reactive.service";
 
 @Component({
@@ -7,16 +7,13 @@ import { ReactiveService } from "src/app/services/reactive.service";
   styleUrls: ["./home-page.component.scss"]
 })
 export class HomePageComponent implements OnInit {
-  config: any;
-  fullpage_api: any;
-  isHeaderFixed: boolean = false;
+  fullPageConfig: any;
   isNavOpen: boolean = false;
-  @ViewChild("fullpageRef") fp_directive: ElementRef;
 
   constructor(public reactiveService: ReactiveService) {
-    this.config = {
+    this.fullPageConfig = {
       licenseKey: null,
-      anchors: ["main", "information", "portfolio", "contacts"],
+      anchors: ["main", "information", "work", "contacts"],
       navigation: false,
       scrollOverflow: true,
       onLeave: (index, nextIndex, direction) => {
@@ -32,7 +29,6 @@ export class HomePageComponent implements OnInit {
   }
 
   getRef(fullPageRef) {
-    // set ref (fullpage_api) for fullpage.js to use API methods in future
-    this.fullpage_api = fullPageRef;
+    this.reactiveService.fullPageApi.next(fullPageRef);
   }
 }

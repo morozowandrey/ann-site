@@ -7,6 +7,7 @@ import { BehaviorSubject } from "rxjs";
 export class ReactiveService {
   public isHeaderSticky: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public isNavOpen: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  public fullPageApi: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor() {}
 }
