@@ -12,8 +12,8 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { InformationComponent } from "./components/information/information.component";
 import { HomePageComponent } from "./components/home-page/home-page.component";
-
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
+import { ContactsPageComponent } from "./components/contacts-page/contacts-page.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { PortfolioComponent } from "./components/portfolio/portfolio.component";
     HomeComponent,
     InformationComponent,
     HomePageComponent,
+    ContactsPageComponent,
     PortfolioComponent
   ],
   imports: [

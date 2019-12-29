@@ -1,0 +1,61 @@
+@import "mixins", "media-mixins", "var";
+
+.contacts-page {
+  height: 100vh;
+  overflow: hidden;
+
+  &_blur {
+    filter: blur(40px);
+  }
+
+  @include media-breakpoint-down(768) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  &-content {
+    @include media-breakpoint-down(375) {
+      padding-right: 30px;
+    }
+
+    @include media-breakpoint-down(360) {
+      padding-right: 20px;
+    }
+
+    &__text,
+    &__email {
+      @include text-desk_wide;
+
+      @include media-breakpoint-down(1536) {
+        @include text-desk;
+      }
+
+      @include media-breakpoint-down(768) {
+        line-height: 1.5;
+        font-family: $t-ff;
+      }
+
+      @include media-breakpoint-down(375) {
+        @include text-mob;
+        font-family: $t-ff;
+        color: $gray;
+      }
+    }
+    &__email {
+      text-decoration: underline;
+    }
+  }
+}
+
+.overlap {
+  display: none;
+
+  @include media-breakpoint-down(768) {
+    display: inline;
+  }
+
+  @include media-breakpoint-down(375) {
+    display: none;
+  }
+}
