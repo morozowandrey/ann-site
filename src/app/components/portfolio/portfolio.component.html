@@ -4,6 +4,7 @@
       <div
         *ngFor="let project of projects; let i = index"
         class="portfolio-list-item"
+        (click)="toggleModal(project.imgSrc)"
         (mouseenter)="projectEnter($event)"
         (mouseleave)="projectLeave($event)"
       >
@@ -18,7 +19,5 @@
         />
       </div>
     </div>
-
-    <div class="portfolio-scene"></div>
   </div>
 </div>

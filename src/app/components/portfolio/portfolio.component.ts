@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { TweenLite, Power2 } from "gsap";
 import { SlowMo } from "gsap/dist/EasePack";
+import { ReactiveService } from "src/app/services/reactive.service";
 
 @Component({
   selector: "portfolio",
@@ -8,6 +9,7 @@ import { SlowMo } from "gsap/dist/EasePack";
   styleUrls: ["./portfolio.component.scss"]
 })
 export class PortfolioComponent implements OnInit {
+  @ViewChild("modalContent") modalContent: ElementRef;
   projects: Array<any> = [
     {
       title: "ARS data",
@@ -17,7 +19,7 @@ export class PortfolioComponent implements OnInit {
     {
       title: "Kultur Punkt",
       subtitle: "Application design",
-      imgSrc: "../../../assets/images/project-image-2x.png"
+      imgSrc: "../../../assets/images/information-projects.png"
     },
     {
       title: "Lead Fuze",
@@ -35,13 +37,23 @@ export class PortfolioComponent implements OnInit {
       imgSrc: "../../../assets/images/project-image-2x.png"
     }
   ];
+  modalOpen: boolean = false;
 
-  constructor() {}
+  constructor(public reactiveService: ReactiveService) {}
 
   ngOnInit() {}
 
+  toggleModal(projectImgSrc) {
+    this.modalOpen = !this.modalOpen;
+    this.reactiveService.isNavOpen.next(this.modalOpen);
+    this.reactiveService.isModalOpen.next({
+      switch: this.modalOpen,
+      imgSrc: projectImgSrc
+    });
+  }
+
   projectEnter(i) {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 768) {
       let o = -100;
       let target = i.target.querySelector("img");
       target.style.visibility = "visible";
@@ -71,7 +83,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   projectLeave(i) {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 768) {
       let target = i.target.querySelector("img");
       i.target.classList.remove("portfolio-list-item_hover");
 
