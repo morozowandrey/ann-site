@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { TweenLite, Power2 } from "gsap";
 import { SlowMo } from "gsap/dist/EasePack";
 import { ReactiveService } from "src/app/services/reactive.service";
+import { painter } from "../../helpers/painter";
 
 @Component({
   selector: "portfolio",
@@ -101,5 +102,13 @@ export class PortfolioComponent implements OnInit {
 
   rand(e, t) {
     return Math.floor(Math.random() * (t - e + 1) + e);
+  }
+
+  mouseenter(e) {
+    painter(e.target, "mouseenter", "#a7a59e");
+  }
+
+  mouseleave(e) {
+    painter(e.target, "mouseleave", "#a7a59e");
   }
 }

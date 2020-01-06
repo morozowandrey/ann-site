@@ -16,13 +16,33 @@
 
       <div class="information-content-text">
         In the
-        <span
+        <a
+          #activeLink1
+          href="https://www.parabola.com/"
+          target="blanc"
           class="information-content-text__action-part after-err-1"
-          (mouseenter)="cvImg = true"
-          (mouseleave)="cvImg = false"
-          >past few years</span
-        >,
+          (mouseenter)="mouseenter($event)"
+          (mouseleave)="mouseleave($event)"
+        >
+          past few years
+          <!-- <img
+            src="../../../assets/images/cv.png"
+            alt=""
+            class="information-content-image"
+          /> -->
+        </a>
+        ,
         <span class="overlap"><br /></span>
+        <a
+          #activeLink2
+          href="https://www.parabola.com/"
+          target="blanc"
+          class="information-content-text__action-part after-err-1"
+          (mouseenter)="mouseenter($event)"
+          (mouseleave)="mouseleave($event)"
+        >
+          I’ve
+        </a>
         <span class="overlap_mob"><br /></span>
         I’ve mostly been working on
         <span class="overlap"><br /></span>
@@ -34,12 +54,17 @@
         <span class="overlap"><br /></span>
         than
         <span class="overlap_mob"><br /></span>
-        <span
+        <a
+          #activeLink3
+          href="https://www.parabola.com/"
+          target="blanc"
           class="information-content-text__action-part after-err-2"
-          (mouseenter)="projectsImg = true"
-          (mouseleave)="projectsImg = false"
-          >100 design projects</span
-        >.
+          (mouseenter)="mouseenter($event)"
+          (mouseleave)="mouseleave($event)"
+        >
+          100 design projects
+        </a>
+        .
       </div>
 
       <div class="information-content-mobile information-content-mobile_bottom">

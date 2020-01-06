@@ -23,7 +23,6 @@
     &-item {
       position: relative;
       margin-bottom: 80px;
-      cursor: pointer;
 
       @include media-breakpoint-down(1440) {
         margin-bottom: 56px;
@@ -38,7 +37,7 @@
 
       &__title {
         @include text-desk_wide;
-        color: #fff;
+        color: $gray;
         margin-top: 0;
         margin-bottom: 16px;
         line-height: 1;
@@ -49,7 +48,6 @@
           line-height: 38px;
 
           font-size: 42px;
-          color: #fff;
         }
         @include media-breakpoint-down(1366) {
           font-size: 40px;
@@ -57,6 +55,7 @@
         @include media-breakpoint-down(768) {
           font-size: 78px;
           line-height: 1;
+          color: #fff;
         }
         @include media-breakpoint-down(375) {
           font-size: 40px;

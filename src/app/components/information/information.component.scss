@@ -62,10 +62,21 @@
       }
 
       &__action-part {
+        color: $gray;
+        position: relative;
         max-width: none;
         text-decoration: underline;
         margin-right: 0;
       }
+    }
+
+    &-image {
+      z-index: 2;
+      position: absolute;
+      font-size: 0;
+      margin: 0 !important;
+      max-width: 420px !important;
+      max-height: 280px !important;
     }
 
     &-images {

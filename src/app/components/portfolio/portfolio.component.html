@@ -8,7 +8,13 @@
         (mouseenter)="projectEnter($event)"
         (mouseleave)="projectLeave($event)"
       >
-        <h3 class="portfolio-list-item__title">{{ project.title }}</h3>
+        <h3
+          class="portfolio-list-item__title"
+          (mouseenter)="mouseenter($event)"
+          (mouseleave)="mouseleave($event)"
+        >
+          {{ project.title }}
+        </h3>
         <p class="portfolio-list-item__subtitle">
           {{ project.subtitle }}
         </p>

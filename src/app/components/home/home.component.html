@@ -10,14 +10,23 @@
       </p>
     </div>
 
+    // for gradient add text-gradient-animation on home-marquee-mover
     <div class="home-marquee">
       <div class="marqueeAnimFirst">
-        <div class="home-marquee-mover text-gradient-animation">
+        <div
+          class="home-marquee-mover"
+          (mouseenter)="mouseenter($event)"
+          (mouseleave)="mouseleave($event)"
+        >
           idea → concept → wireframing → design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
       <div class="marqueeAnimSecond">
-        <div class="home-marquee-mover text-gradient-animation">
+        <div
+          class="home-marquee-mover"
+          (mouseenter)="mouseenter($event)"
+          (mouseleave)="mouseleave($event)"
+        >
           idea → concept → wireframing → design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
