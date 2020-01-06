@@ -41,7 +41,12 @@
       color: #fff;
     }
 
-    @include media-breakpoint-down(1536) {
+    @include media-breakpoint-down(1680) {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    @include media-breakpoint-down(1440) {
       margin-right: 62px;
       padding-left: 20px;
       font-size: 16px;

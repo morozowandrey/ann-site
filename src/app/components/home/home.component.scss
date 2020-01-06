@@ -1,17 +1,7 @@
 @import "mixins", "media-mixins", "var", "animations";
 
 .home {
-  padding-top: 140px;
-  height: calc(100vh - 140px);
-
-  @include media-breakpoint-down(1440) {
-    padding-top: 80px;
-    height: calc(100vh - 108px);
-  }
-  @include media-breakpoint-down(768) {
-    padding-top: 0px;
-    height: 100vh;
-  }
+  height: 100vh;
 
   &-aline {
     display: flex;
@@ -49,6 +39,12 @@
     font-size: 140px;
     line-height: 0.7;
 
+    @include media-breakpoint-down(1680) {
+      margin-bottom: 45px;
+      font-size: 124px;
+      line-height: 1;
+    }
+
     @include media-breakpoint-down(1440) {
       margin-bottom: 24px;
       margin-right: 24px;
@@ -80,6 +76,11 @@
     display: inline-block;
     line-height: 0.9;
     font-size: 58px;
+
+    @include media-breakpoint-down(1680) {
+      font-size: 52px;
+      line-height: 1.42;
+    }
 
     @include media-breakpoint-down(1440) {
       font-size: 42px;
@@ -127,6 +128,11 @@
     &-mover {
       @include title-gray;
       line-height: 1.1;
+
+      @include media-breakpoint-down(1680) {
+        font-size: 124px;
+        line-height: 1;
+      }
 
       @include media-breakpoint-up(1440) {
         font-size: 140px;

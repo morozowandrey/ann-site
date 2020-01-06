@@ -3,7 +3,11 @@
 .information {
   overflow: hidden;
   height: 100vh;
-  padding-top: 115px;
+  // padding-top: 91px;
+
+  // @include media-breakpoint-down(1440) {
+  //   padding-top: 64px;
+  // }
 
   @include media-breakpoint-down(768) {
     padding-top: 220px;
