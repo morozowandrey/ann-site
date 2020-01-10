@@ -83,19 +83,19 @@
       max-height: 280px !important;
     }
 
-    &-images {
-      max-width: 544px;
-      @include media-breakpoint-down(1536) {
-        max-width: 500px;
-      }
+    // &-images {
+    //   position: relative;
+    // @include media-breakpoint-down(1536) {
+    //   max-width: 500px;
+    // }
 
-      @include media-breakpoint-down(768) {
-        display: none;
-      }
+    // @include media-breakpoint-down(768) {
+    //   display: none;
+    // }
 
-      &__img {
-      }
-    }
+    //   &__img {
+    //   }
+    // }
 
     &-mobile {
       display: none;
@@ -202,6 +202,14 @@
         line-height: 1.25;
       }
     }
+  }
+
+  &-followImage {
+    position: absolute;
+    z-index: 5;
+    top: -230px;
+    left: -180px;
+    max-width: 254px;
   }
 }
 

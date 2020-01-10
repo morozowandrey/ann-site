@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  ElementRef,
+  HostListener
+} from "@angular/core";
 import { painter } from "../../helpers/painter";
 
 @Component({
@@ -12,32 +19,66 @@ export class InformationComponent implements OnInit {
   @ViewChild("activeLink2") activeLink2: ElementRef;
   @ViewChild("activeLink3") activeLink3: ElementRef;
 
-  cvImg: boolean = false;
-  projectsImg: boolean = false;
+  @ViewChild("followImage") followImage: ElementRef;
+
+  showCv: boolean = false;
+  showAnna: boolean = false;
+  showProjects: boolean = false;
+
+  mouseX: string = "";
+  mouseY: string = "";
+
+  elementSegmentWidth: number = null;
+
+  hotImageSrc: string = "";
+  hotImageAlt: string = "";
+
+  cvImages: Array<any> = [
+    {
+      src: "../../../assets/images/information-ann.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-cv.png",
+      alt: "collage about Anna"
+    }
+  ];
 
   constructor() {}
+
+  @HostListener("document:mousemove", ["$event"])
+  onMouseMove(e) {
+    if (this.showCv) {
+      this.followImage.nativeElement.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+    }
+  }
 
   ngOnInit() {}
 
   mouseenter(e) {
     painter(e.target, "mouseenter", "#a7a59e");
+
+    let elementWidth = e.target.offsetWidth;
+    this.elementSegmentWidth = elementWidth / this.cvImages.length;
+
     if (e.target === this.activeLink1.nativeElement) {
-      this.cvImg = true;
+      this.showCv = true;
     } else if (e.target === this.activeLink2.nativeElement) {
-      this.cvImg = true;
+      this.showAnna = true;
     } else if (e.target === this.activeLink3.nativeElement) {
-      this.projectsImg = true;
+      this.showProjects = true;
     }
   }
 
   mouseleave(e) {
     painter(e.target, "mouseleave", "#a7a59e");
+
     if (e.target === this.activeLink1.nativeElement) {
-      this.cvImg = false;
+      this.showCv = false;
     } else if (e.target === this.activeLink2.nativeElement) {
-      this.cvImg = false;
+      this.showAnna = false;
     } else if (e.target === this.activeLink3.nativeElement) {
-      this.projectsImg = false;
+      this.showProjects = false;
     }
   }
 }

@@ -25,11 +25,13 @@
           (mouseleave)="mouseleave($event)"
         >
           past few years
-          <!-- <img
-            src="../../../assets/images/cv.png"
-            alt=""
-            class="information-content-image"
-          /> -->
+          <img
+            #followImage
+            class="information-followImage"
+            *ngIf="showCv"
+            src="../../../assets/images/information-ann.png"
+            alt="Annas cv image"
+          />
         </a>
         ,
         <span class="overlap"><br /></span>
@@ -44,7 +46,7 @@
           I’ve
         </a>
         <span class="overlap_mob"><br /></span>
-        I’ve mostly been working on
+        mostly been working on
         <span class="overlap"><br /></span>
         corporate websites, landing
         <span class="overlap"><br /></span>
@@ -81,37 +83,33 @@
         </a>
       </div>
 
-      <!-- <div class="information-content-images">
-        <img
+      <!-- <div class="information-content-images"> -->
+
+      <!-- <img
           class="information-content-images__img"
-          *ngIf="!cvImg && !projectsImg"
-          src="../../../assets/images/information-ann.png"
-          alt="Annas cv image"
-        />
-        <img
-          class="information-content-images__img"
-          *ngIf="cvImg"
+          *ngIf="showCv"
           src="../../../assets/images/information-cv.png"
           alt="collage about Anna"
         />
         <img
           class="information-content-images__img"
-          *ngIf="projectsImg"
+          *ngIf="showProjects"
           src="../../../assets/images/information-projects.png"
           alt="100 projects collage"
-        />
-      </div> -->
+        /> -->
+      <!-- </div> -->
     </div>
   </div>
   <div class="information-footer">
     <span
-      *ngIf="!cvImg && !projectsImg"
+      *ngIf="!showCv && !showProjects"
       class="information-footer__link"
     ></span>
-    <a *ngIf="cvImg" href="" target="blank" class="information-footer__link">
+
+    <span *ngIf="showCv" class="information-footer__link">
       * check my paper version CV with full information
-    </a>
-    <span *ngIf="projectsImg" class="information-footer__link">
+    </span>
+    <span *ngIf="showProjects" class="information-footer__link">
       * check my selected works or just scroll down
     </span>
   </div>
