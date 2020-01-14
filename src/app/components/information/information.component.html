@@ -17,7 +17,7 @@
       <div class="information-content-text">
         In the
         <a
-          #activeLink1
+          #cvNode
           href="https://www.parabola.com/"
           target="blanc"
           class="information-content-text__action-part after-err-1"
@@ -25,18 +25,11 @@
           (mouseleave)="mouseleave($event)"
         >
           past few years
-          <img
-            #followImage
-            class="information-followImage"
-            *ngIf="showCv"
-            src="../../../assets/images/information-ann.png"
-            alt="Annas cv image"
-          />
         </a>
         ,
         <span class="overlap"><br /></span>
         <a
-          #activeLink2
+          #annaNode
           href="https://www.parabola.com/"
           target="blanc"
           class="information-content-text__action-part after-err-1"
@@ -57,7 +50,7 @@
         than
         <span class="overlap_mob"><br /></span>
         <a
-          #activeLink3
+          #projectsNode
           href="https://www.parabola.com/"
           target="blanc"
           class="information-content-text__action-part after-err-2"
@@ -112,5 +105,36 @@
     <span *ngIf="showProjects" class="information-footer__link">
       * check my selected works or just scroll down
     </span>
+  </div>
+</div>
+
+<div
+  #followImage
+  class="followImage"
+  [ngClass]="{ 'followImage-show': showCv || showAnna || showProjects }"
+>
+  <div #followImageBox1 [ngClass]="{ 'followImage-show': showCv }">
+    <img
+      *ngFor="let image of cvImages; let i = index"
+      src="{{ image.src }}"
+      alt="{{ image.alt }}"
+      class="followImage__image followImage__image_hide"
+    />
+  </div>
+  <div #followImageBox2 [ngClass]="{ 'followImage-show': showAnna }">
+    <img
+      *ngFor="let image of annaImages; let i = index"
+      src="{{ image.src }}"
+      alt="{{ image.alt }}"
+      class="followImage__image followImage__image_hide"
+    />
+  </div>
+  <div #followImageBox3 [ngClass]="{ 'followImage-show': showProjects }">
+    <img
+      *ngFor="let image of projectsImages; let i = index"
+      src="{{ image.src }}"
+      alt="{{ image.alt }}"
+      class="followImage__image followImage__image_hide"
+    />
   </div>
 </div>

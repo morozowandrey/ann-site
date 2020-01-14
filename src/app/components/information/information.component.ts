@@ -7,6 +7,7 @@ import {
   HostListener
 } from "@angular/core";
 import { painter } from "../../helpers/painter";
+import { slideshow } from "../../helpers/slideshow";
 
 @Component({
   selector: "information",
@@ -15,11 +16,14 @@ import { painter } from "../../helpers/painter";
 })
 export class InformationComponent implements OnInit {
   @Input("isHeaderFixed") isHeaderFixed: boolean = false;
-  @ViewChild("activeLink1") activeLink1: ElementRef;
-  @ViewChild("activeLink2") activeLink2: ElementRef;
-  @ViewChild("activeLink3") activeLink3: ElementRef;
+  @ViewChild("cvNode") cvNode: ElementRef;
+  @ViewChild("annaNode") annaNode: ElementRef;
+  @ViewChild("projectsNode") projectsNode: ElementRef;
 
   @ViewChild("followImage") followImage: ElementRef;
+  @ViewChild("followImageBox1") followImageBox1: ElementRef;
+  @ViewChild("followImageBox2") followImageBox2: ElementRef;
+  @ViewChild("followImageBox3") followImageBox3: ElementRef;
 
   showCv: boolean = false;
   showAnna: boolean = false;
@@ -33,6 +37,8 @@ export class InformationComponent implements OnInit {
   hotImageSrc: string = "";
   hotImageAlt: string = "";
 
+  imagesNodesArr;
+
   cvImages: Array<any> = [
     {
       src: "../../../assets/images/information-ann.png",
@@ -44,12 +50,64 @@ export class InformationComponent implements OnInit {
     }
   ];
 
+  annaImages: Array<any> = [
+    {
+      src: "../../../assets/images/information-ann.png",
+      alt: "Annas cv image"
+    }
+  ];
+
+  projectsImages: Array<any> = [
+    {
+      src: "../../../assets/images/information-projects/1.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/2.png",
+      alt: "collage about Anna"
+    },
+    {
+      src: "../../../assets/images/information-projects/3.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/4.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/5.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/6.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/7.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/8.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/9.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/10.png",
+      alt: "Annas cv image"
+    }
+  ];
+
   constructor() {}
 
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e) {
-    if (this.showCv) {
-      this.followImage.nativeElement.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+    if (this.showCv || this.showAnna || this.showProjects) {
+      this.followImage.nativeElement.style.transform = `translate(${e.pageX +
+        50}px, ${e.pageY + 35}px)`;
+      slideshow(e, this.imagesNodesArr);
     }
   }
 
@@ -58,27 +116,37 @@ export class InformationComponent implements OnInit {
   mouseenter(e) {
     painter(e.target, "mouseenter", "#a7a59e");
 
-    let elementWidth = e.target.offsetWidth;
-    this.elementSegmentWidth = elementWidth / this.cvImages.length;
-
-    if (e.target === this.activeLink1.nativeElement) {
+    if (e.target === this.cvNode.nativeElement) {
       this.showCv = true;
-    } else if (e.target === this.activeLink2.nativeElement) {
+      this.imagesNodesArr = this.followImageBox1.nativeElement.querySelectorAll(
+        "img"
+      );
+    } else if (e.target === this.annaNode.nativeElement) {
       this.showAnna = true;
-    } else if (e.target === this.activeLink3.nativeElement) {
+      this.imagesNodesArr = this.followImageBox2.nativeElement.querySelectorAll(
+        "img"
+      );
+    } else if (e.target === this.projectsNode.nativeElement) {
       this.showProjects = true;
+      this.imagesNodesArr = this.followImageBox3.nativeElement.querySelectorAll(
+        "img"
+      );
     }
   }
 
   mouseleave(e) {
     painter(e.target, "mouseleave", "#a7a59e");
 
-    if (e.target === this.activeLink1.nativeElement) {
+    if (e.target === this.cvNode.nativeElement) {
       this.showCv = false;
-    } else if (e.target === this.activeLink2.nativeElement) {
+    } else if (e.target === this.annaNode.nativeElement) {
       this.showAnna = false;
-    } else if (e.target === this.activeLink3.nativeElement) {
+    } else if (e.target === this.projectsNode.nativeElement) {
       this.showProjects = false;
     }
+
+    this.imagesNodesArr.forEach(image => {
+      image.classList.add("followImage__image_hide");
+    });
   }
 }
