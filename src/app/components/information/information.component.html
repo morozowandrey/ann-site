@@ -75,22 +75,6 @@
           </p>
         </a>
       </div>
-
-      <!-- <div class="information-content-images"> -->
-
-      <!-- <img
-          class="information-content-images__img"
-          *ngIf="showCv"
-          src="../../../assets/images/information-cv.png"
-          alt="collage about Anna"
-        />
-        <img
-          class="information-content-images__img"
-          *ngIf="showProjects"
-          src="../../../assets/images/information-projects.png"
-          alt="100 projects collage"
-        /> -->
-      <!-- </div> -->
     </div>
   </div>
   <div class="information-footer">
@@ -110,31 +94,31 @@
 
 <div
   #followImage
-  class="followImage"
-  [ngClass]="{ 'followImage-show': showCv || showAnna || showProjects }"
+  class="slideshow"
+  [ngClass]="{ 'slideshow-show': showCv || showAnna || showProjects }"
 >
-  <div #followImageBox1 [ngClass]="{ 'followImage-show': showCv }">
+  <div #followImageBox1 [ngClass]="{ 'slideshow-show': showCv }">
     <img
       *ngFor="let image of cvImages; let i = index"
       src="{{ image.src }}"
       alt="{{ image.alt }}"
-      class="followImage__image followImage__image_hide"
+      class="slideshow__image slideshow__image_hide"
     />
   </div>
-  <div #followImageBox2 [ngClass]="{ 'followImage-show': showAnna }">
+  <div #followImageBox2 [ngClass]="{ 'slideshow-show': showAnna }">
     <img
       *ngFor="let image of annaImages; let i = index"
       src="{{ image.src }}"
       alt="{{ image.alt }}"
-      class="followImage__image followImage__image_hide"
+      class="slideshow__image slideshow__image_hide"
     />
   </div>
-  <div #followImageBox3 [ngClass]="{ 'followImage-show': showProjects }">
+  <div #followImageBox3 [ngClass]="{ 'slideshow-show': showProjects }">
     <img
       *ngFor="let image of projectsImages; let i = index"
       src="{{ image.src }}"
       alt="{{ image.alt }}"
-      class="followImage__image followImage__image_hide"
+      class="slideshow__image slideshow__image_hide"
     />
   </div>
 </div>

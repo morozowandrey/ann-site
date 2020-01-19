@@ -8,9 +8,9 @@ export function slideshow(event, images) {
 
   if (imageNumber >= 0) {
     images.forEach(image => {
-      image.classList.add("followImage__image_hide");
+      image.classList.add("slideshow__image_hide");
     });
-    images[imageNumber].classList.remove("followImage__image_hide");
+    images[imageNumber].classList.remove("slideshow__image_hide");
   }
 
   return;

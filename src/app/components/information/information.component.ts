@@ -1,7 +1,6 @@
 import {
   Component,
   OnInit,
-  Input,
   ViewChild,
   ElementRef,
   HostListener
@@ -15,7 +14,6 @@ import { slideshow } from "../../helpers/slideshow";
   styleUrls: ["./information.component.scss"]
 })
 export class InformationComponent implements OnInit {
-  @Input("isHeaderFixed") isHeaderFixed: boolean = false;
   @ViewChild("cvNode") cvNode: ElementRef;
   @ViewChild("annaNode") annaNode: ElementRef;
   @ViewChild("projectsNode") projectsNode: ElementRef;
@@ -29,15 +27,7 @@ export class InformationComponent implements OnInit {
   showAnna: boolean = false;
   showProjects: boolean = false;
 
-  mouseX: string = "";
-  mouseY: string = "";
-
-  elementSegmentWidth: number = null;
-
-  hotImageSrc: string = "";
-  hotImageAlt: string = "";
-
-  imagesNodesArr;
+  followImagesNodesArr: Array<any> = [];
 
   cvImages: Array<any> = [
     {
@@ -49,14 +39,12 @@ export class InformationComponent implements OnInit {
       alt: "collage about Anna"
     }
   ];
-
   annaImages: Array<any> = [
     {
       src: "../../../assets/images/information-ann.png",
       alt: "Annas cv image"
     }
   ];
-
   projectsImages: Array<any> = [
     {
       src: "../../../assets/images/information-projects/1.png",
@@ -105,9 +93,15 @@ export class InformationComponent implements OnInit {
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e) {
     if (this.showCv || this.showAnna || this.showProjects) {
-      this.followImage.nativeElement.style.transform = `translate(${e.pageX +
-        50}px, ${e.pageY + 35}px)`;
-      slideshow(e, this.imagesNodesArr);
+      if (e.pageX > 1100) {
+        this.followImage.nativeElement.style.transform = `translate(${e.pageX -
+          285}px, ${e.pageY + 20}px)`;
+        slideshow(e, this.followImagesNodesArr);
+      } else {
+        this.followImage.nativeElement.style.transform = `translate(${e.pageX +
+          30}px, ${e.pageY + 20}px)`;
+        slideshow(e, this.followImagesNodesArr);
+      }
     }
   }
 
@@ -118,17 +112,17 @@ export class InformationComponent implements OnInit {
 
     if (e.target === this.cvNode.nativeElement) {
       this.showCv = true;
-      this.imagesNodesArr = this.followImageBox1.nativeElement.querySelectorAll(
+      this.followImagesNodesArr = this.followImageBox1.nativeElement.querySelectorAll(
         "img"
       );
     } else if (e.target === this.annaNode.nativeElement) {
       this.showAnna = true;
-      this.imagesNodesArr = this.followImageBox2.nativeElement.querySelectorAll(
+      this.followImagesNodesArr = this.followImageBox2.nativeElement.querySelectorAll(
         "img"
       );
     } else if (e.target === this.projectsNode.nativeElement) {
       this.showProjects = true;
-      this.imagesNodesArr = this.followImageBox3.nativeElement.querySelectorAll(
+      this.followImagesNodesArr = this.followImageBox3.nativeElement.querySelectorAll(
         "img"
       );
     }
@@ -145,8 +139,8 @@ export class InformationComponent implements OnInit {
       this.showProjects = false;
     }
 
-    this.imagesNodesArr.forEach(image => {
-      image.classList.add("followImage__image_hide");
+    this.followImagesNodesArr.forEach(image => {
+      image.classList.add("slideshow__image_hide");
     });
   }
 }
