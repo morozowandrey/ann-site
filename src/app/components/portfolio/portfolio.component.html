@@ -5,24 +5,30 @@
         *ngFor="let project of projects; let i = index"
         class="portfolio-list-item"
         (click)="toggleModal(project.imgSrc)"
-        (mouseenter)="projectEnter($event)"
-        (mouseleave)="projectLeave($event)"
       >
         <h3
           class="portfolio-list-item__title"
-          (mouseenter)="mouseenter($event)"
-          (mouseleave)="mouseleave($event)"
+          (mouseenter)="mouseenter($event, i)"
+          (mouseleave)="mouseleave($event, i)"
         >
           {{ project.title }}
         </h3>
+        <!-- IMPORTANT TO KEEP "portfolio-slideshow" AFTER "portfolio-list-item__title" FOR projectEnter() FUNC -->
+        <div class="portfolio-slideshow">
+          <div id="followImage{{ i + 1 }}" class="slideshow">
+            <div id="followImageBox{{ i + 1 }}">
+              <img
+                *ngFor="let image of project.images"
+                src="{{ image.src }}"
+                alt="{{ image.alt }}"
+                class="slideshow__image"
+              />
+            </div>
+          </div>
+        </div>
         <p class="portfolio-list-item__subtitle">
           {{ project.subtitle }}
         </p>
-        <img
-          class="portfolio-list-item__img"
-          src="{{ project.imgSrc }}"
-          alt="{{ project.title }} image"
-        />
       </div>
     </div>
   </div>
