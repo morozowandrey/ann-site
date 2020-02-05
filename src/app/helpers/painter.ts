@@ -1,13 +1,14 @@
 let colors: Array<string> = [
-  "#b8ffa2",
-  "#f85a45",
-  "#feaac7",
-  "#587cf9",
-  "#41907a",
+  "#00fca2",
+  "#ff0f0f",
+  "#fc6800",
+  "#4d73f7",
+  "#ffff57",
+  "#09e7e7",
   "#56b8fd",
-  "#c995ff",
-  "#ffffa2",
-  "#a4c3f6"
+  "#1f9c79",
+  "#9836d9",
+  "#d20a82"
 ];
 
 export function painter(target, action, initialColor) {

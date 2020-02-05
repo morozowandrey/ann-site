@@ -2,10 +2,11 @@
 
 .portfolio {
   &-wrapper {
+    position: relative;
+
     height: 100%;
     padding-top: 355px;
     display: flex;
-    background-image: url(../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_1.png);
 
     @include media-breakpoint-down(1680) {
       padding-top: 264px;
@@ -26,7 +27,7 @@
     justify-content: baseline;
 
     &-item {
-      position: relative;
+      // position: relative;
       margin-bottom: 80px;
 
       @include media-breakpoint-down(1680) {

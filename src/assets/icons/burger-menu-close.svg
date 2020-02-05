@@ -1,12 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="28" viewBox="0 0 48 28">
-    <g fill="none" fill-rule="evenodd">
-        <path fill="#E10614" d="M0 28v-8h8v8z"/>
-        <path fill="#059DE3" d="M28 0v8h-8V0z"/>
-        <path fill="#94686C" d="M20 28v-8h8v8z"/>
-        <path fill="#FEEC09" d="M8 0v8H0V0z"/>
-        <path fill="#794AB1" d="M40 20h8v8h-8z"/>
-        <path fill="#3EA532" d="M40 0h8v8h-8z"/>
-        <path fill="#8C004F" d="M10 10h8v8h-8z"/>
-        <path fill="#8CC796" d="M30 10h8v8h-8z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="28px" viewBox="0 0 48 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>burger-menu-close</title>
+    <desc>Created with Sketch.</desc>
+    <g id="1366" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Porfolio_Colors_v2" transform="translate(-415.000000, -560.000000)">
+            <g id="burger-menu-close" transform="translate(415.000000, 560.000000)">
+                <rect id="Rectangle" fill="#FEFF10" transform="translate(4.000000, 4.000000) rotate(-270.000000) translate(-4.000000, -4.000000) " x="0" y="0" width="8" height="8"></rect>
+                <rect id="Rectangle-Copy" fill="#22B9FF" transform="translate(24.000000, 4.000000) rotate(-270.000000) translate(-24.000000, -4.000000) " x="20" y="0" width="8" height="8"></rect>
+                <rect id="Rectangle-Copy-10" fill="#FF0000" transform="translate(4.000000, 24.000000) rotate(-90.000000) translate(-4.000000, -24.000000) " x="0" y="20" width="8" height="8"></rect>
+                <rect id="Rectangle-Copy-11" fill="#8DD3D6" transform="translate(24.000000, 24.000000) rotate(-90.000000) translate(-24.000000, -24.000000) " x="20" y="20" width="8" height="8"></rect>
+                <rect id="Rectangle-Copy-14" fill="#476FFF" x="40" y="20" width="8" height="8"></rect>
+                <rect id="Rectangle-Copy-16" fill="#00FF99" x="40" y="0" width="8" height="8"></rect>
+                <rect id="Rectangle-Copy-7" fill="#FF4C00" x="30" y="10" width="8" height="8"></rect>
+                <rect id="Rectangle-Copy-8" fill="#456D6B" x="10" y="10" width="8" height="8"></rect>
+            </g>
+        </g>
     </g>
 </svg>

@@ -18,6 +18,7 @@ import { slideshow } from "src/app/helpers/slideshow";
 })
 export class PortfolioComponent implements OnInit {
   @ViewChild("modalContent") modalContent: ElementRef;
+  @ViewChild("portfolioContainer") portfolioContainer;
 
   modalOpen: boolean = false;
 
@@ -256,10 +257,12 @@ export class PortfolioComponent implements OnInit {
     }
   }
 
-  projectEnter(i) {
+  projectEnter(event) {
     if (window.innerWidth > 768) {
-      let o = -100;
-      let target = i.target.nextSibling;
+      let portfolioContainerRect = this.portfolioContainer.nativeElement.getBoundingClientRect();
+      let target = event.target.nextSibling;
+      let o = window.innerHeight / 2 - portfolioContainerRect.top - 300 / 2;
+
       target.style.visibility = "visible";
 
       TweenLite.fromTo(
