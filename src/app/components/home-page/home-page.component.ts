@@ -20,6 +20,16 @@ export class HomePageComponent implements OnInit {
         if (index.index === 1) this.reactiveService.isHeaderSticky.next(false);
         if (direction === "down")
           this.reactiveService.isHeaderSticky.next(true);
+
+        this.reactiveService.fullPageApi.subscribe(api => {
+          if (api) {
+            if (api.getActiveSection().anchor === "main") {
+              this.reactiveService.leaveSection.next(1);
+            } else {
+              this.reactiveService.leaveSection.next(0);
+            }
+          }
+        });
       }
     };
   }

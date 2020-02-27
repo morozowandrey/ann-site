@@ -1,4 +1,10 @@
-import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  ChangeDetectorRef
+} from "@angular/core";
 import { ReactiveService } from "src/app/services/reactive.service";
 
 @Component({
@@ -9,14 +15,29 @@ import { ReactiveService } from "src/app/services/reactive.service";
 export class HeaderComponent implements OnInit {
   navOpen: boolean = false;
   fullpage_api: any;
+  showSlogan: boolean = true;
+  isHeaderFixed: boolean = false;
+
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
-  constructor(public reactiveService: ReactiveService) {}
+  constructor(
+    public reactiveService: ReactiveService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.reactiveService.fullPageApi.subscribe(api => {
       this.fullpage_api = api;
     });
+
+    this.reactiveService.leaveSection.subscribe(val => {
+      this.showSlogan = val;
+      this.cdr.detectChanges();
+    });
+
+    this.reactiveService.isHeaderSticky.subscribe(
+      val => (this.isHeaderFixed = val)
+    );
   }
 
   toggleNav(section) {

@@ -1,9 +1,10 @@
 <main [@routeAnimations]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
-  <app-header
+  <app-header></app-header>
+  <!-- <app-header
     *ngIf="isHeaderFixed || null"
     [ngClass]="{ headerFadeIn: isHeaderFixed, headerFadeOut: !isHeaderFixed }"
-  ></app-header>
+  ></app-header> -->
 </main>
 
 <div

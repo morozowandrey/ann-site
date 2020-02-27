@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { painter } from "../../helpers/painter";
+import { ReactiveService } from "src/app/services/reactive.service";
 
 @Component({
   selector: "home",
@@ -9,7 +10,7 @@ import { painter } from "../../helpers/painter";
 export class HomeComponent implements OnInit {
   isMobileSize: boolean = false;
 
-  constructor() {}
+  constructor(public reactiveService: ReactiveService) {}
 
   ngOnInit() {
     window.screen.availWidth <= 768

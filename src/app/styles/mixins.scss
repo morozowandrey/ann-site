@@ -1,5 +1,33 @@
 @import "media-mixins", "var";
 
+@mixin logo-text {
+  font-family: $r-ff;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(1680) {
+    font-size: 20px;
+    letter-spacing: 1.25px;
+  }
+
+  @include media-breakpoint-down(1440) {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  @include media-breakpoint-down(768) {
+    font-size: 24px;
+    letter-spacing: 0.9px;
+  }
+
+  @include media-breakpoint-down(375) {
+    font-size: 14px;
+    letter-spacing: 0.88px;
+  }
+}
+
 @mixin title-white {
   font-family: $t-ff;
   font-size: 98px;

@@ -5,6 +5,7 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root"
 })
 export class ReactiveService {
+  public leaveSection: BehaviorSubject<any> = new BehaviorSubject<any>(1);
   public isHeaderSticky: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public isNavOpen: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public isModalOpen: BehaviorSubject<any> = new BehaviorSubject<any>(false);
