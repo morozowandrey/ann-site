@@ -123,37 +123,41 @@ export class InformationComponent implements OnInit {
   mouseenter(e) {
     painter(e.target, "mouseenter", "#a7a59e");
 
-    if (e.target === this.cvNode.nativeElement) {
-      this.showCv = true;
-      this.followImagesNodesArr = this.followImageBox1.nativeElement.querySelectorAll(
-        "img"
-      );
-    } else if (e.target === this.annaNode.nativeElement) {
-      this.showAnna = true;
-      this.followImagesNodesArr = this.followImageBox2.nativeElement.querySelectorAll(
-        "img"
-      );
-    } else if (e.target === this.projectsNode.nativeElement) {
-      this.showProjects = true;
-      this.followImagesNodesArr = this.followImageBox3.nativeElement.querySelectorAll(
-        "img"
-      );
+    if (!this.isMobile) {
+      if (e.target === this.cvNode.nativeElement) {
+        this.showCv = true;
+        this.followImagesNodesArr = this.followImageBox1.nativeElement.querySelectorAll(
+          "img"
+        );
+      } else if (e.target === this.annaNode.nativeElement) {
+        this.showAnna = true;
+        this.followImagesNodesArr = this.followImageBox2.nativeElement.querySelectorAll(
+          "img"
+        );
+      } else if (e.target === this.projectsNode.nativeElement) {
+        this.showProjects = true;
+        this.followImagesNodesArr = this.followImageBox3.nativeElement.querySelectorAll(
+          "img"
+        );
+      }
     }
   }
 
   mouseleave(e) {
     painter(e.target, "mouseleave", "#a7a59e");
 
-    if (e.target === this.cvNode.nativeElement) {
-      this.showCv = false;
-    } else if (e.target === this.annaNode.nativeElement) {
-      this.showAnna = false;
-    } else if (e.target === this.projectsNode.nativeElement) {
-      this.showProjects = false;
-    }
+    if (!this.isMobile) {
+      if (e.target === this.cvNode.nativeElement) {
+        this.showCv = false;
+      } else if (e.target === this.annaNode.nativeElement) {
+        this.showAnna = false;
+      } else if (e.target === this.projectsNode.nativeElement) {
+        this.showProjects = false;
+      }
 
-    this.followImagesNodesArr.forEach(image => {
-      image.classList.add("slideshow__image_hide");
-    });
+      this.followImagesNodesArr.forEach(image => {
+        image.classList.add("slideshow__image_hide");
+      });
+    }
   }
 }
