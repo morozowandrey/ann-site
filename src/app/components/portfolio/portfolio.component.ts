@@ -28,7 +28,7 @@ export class PortfolioComponent implements OnInit {
   projects: Array<any> = [
     {
       title: "ARS data",
-      subtitle: "Branding, website design & development",
+      subtitle: "Website design, development support, branding",
       handle: "arsdataImages",
       images: [
         {
@@ -69,8 +69,8 @@ export class PortfolioComponent implements OnInit {
       ]
     },
     {
-      title: "BNN",
-      subtitle: "Application design",
+      title: "Bnn clothing",
+      subtitle: "Website design",
       handle: "bnnImages",
       images: [
         {
@@ -123,7 +123,7 @@ export class PortfolioComponent implements OnInit {
     },
     {
       title: "Lead Fuze",
-      subtitle: "Website design & development support",
+      subtitle: "Website design, development support",
       handle: "leadFuzeImages",
       images: [
         {
@@ -159,7 +159,7 @@ export class PortfolioComponent implements OnInit {
       ]
     },
     {
-      title: "Michelin",
+      title: "Restaurant guide",
       subtitle: "Application design",
       handle: "michelinImages",
       images: [
@@ -179,30 +179,30 @@ export class PortfolioComponent implements OnInit {
           alt: "Michelin mobile app screen"
         }
       ]
-    },
-    {
-      title: "Kultur Punkt",
-      subtitle: "Application design",
-      imgSrc: "../../../assets/images/information-projects.png",
-      handle: "kulturPunktImages",
-      images: [
-        {
-          src:
-            "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_1.png",
-          alt: "Kultur Punkt mobile app screen"
-        },
-        {
-          src:
-            "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_2.png",
-          alt: "Kultur Punkt mobile app screen"
-        },
-        {
-          src:
-            "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_3.png",
-          alt: "Kultur Punkt mobile app screen"
-        }
-      ]
     }
+    // {
+    //   title: "Kultur Punkt",
+    //   subtitle: "Application design",
+    //   imgSrc: "../../../assets/images/information-projects.png",
+    //   handle: "kulturPunktImages",
+    //   images: [
+    //     {
+    //       src:
+    //         "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_1.png",
+    //       alt: "Kultur Punkt mobile app screen"
+    //     },
+    //     {
+    //       src:
+    //         "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_2.png",
+    //       alt: "Kultur Punkt mobile app screen"
+    //     },
+    //     {
+    //       src:
+    //         "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_3.png",
+    //       alt: "Kultur Punkt mobile app screen"
+    //     }
+    //   ]
+    // }
   ];
 
   constructor(public reactiveService: ReactiveService) {}
