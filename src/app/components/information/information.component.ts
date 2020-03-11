@@ -26,22 +26,23 @@ export class InformationComponent implements OnInit {
   showCv: boolean = false;
   showAnna: boolean = false;
   showProjects: boolean = false;
+  isMobile: boolean = window.innerWidth <= 768;
 
   followImagesNodesArr: Array<any> = [];
 
   cvImages: Array<any> = [
     {
-      src: "../../../assets/images/information-ann.png",
+      src: "../../../assets/images/cv-preview-1.png",
       alt: "Annas cv image"
     },
     {
-      src: "../../../assets/images/information-cv.png",
+      src: "../../../assets/images/cv-preview-2.png",
       alt: "collage about Anna"
     }
   ];
   annaImages: Array<any> = [
     {
-      src: "../../../assets/images/information-ann.png",
+      src: "../../../assets/images/anna-photo.png",
       alt: "Annas cv image"
     }
   ];
@@ -92,7 +93,7 @@ export class InformationComponent implements OnInit {
 
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e) {
-    if (this.showCv || this.showAnna || this.showProjects) {
+    if (this.showCv || this.showAnna) {
       if (e.pageX > 1100) {
         this.followImage.nativeElement.style.transform = `translate(${e.pageX -
           285}px, ${e.pageY + 20}px)`;
@@ -100,6 +101,18 @@ export class InformationComponent implements OnInit {
       } else {
         this.followImage.nativeElement.style.transform = `translate(${e.pageX +
           30}px, ${e.pageY + 20}px)`;
+        slideshow(e, this.followImagesNodesArr);
+      }
+    }
+
+    if (this.showProjects) {
+      if (e.pageX > 1100) {
+        this.followImage.nativeElement.style.transform = `translate(${e.pageX -
+          305}px, ${e.pageY - 190}px)`;
+        slideshow(e, this.followImagesNodesArr);
+      } else {
+        this.followImage.nativeElement.style.transform = `translate(${e.pageX +
+          25}px, ${e.pageY - 190}px)`;
         slideshow(e, this.followImagesNodesArr);
       }
     }

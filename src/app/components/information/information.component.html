@@ -18,21 +18,25 @@
         During
         <a
           #cvNode
-          href="https://www.parabola.com/"
+          href="../../../assets/annayushch-cv.pdf"
           target="blanc"
           class="information-content-text__action-part after-err-1"
           (mouseenter)="mouseenter($event)"
           (mouseleave)="mouseleave($event)"
         >
-          the last three years
+          the last three years,
         </a>
-        ,
+
         <span class="overlap"><br /></span>
         <a
           #annaNode
-          href="https://www.parabola.com/"
-          target="blanc"
-          class="information-content-text__action-part after-err-1"
+          href="#information"
+          disabled
+          tabindex="-1"
+          class="information-content-text__action-part"
+          [ngClass]="{
+            'information-content-text__action-part_false': isMobile
+          }"
           (mouseenter)="mouseenter($event)"
           (mouseleave)="mouseleave($event)"
         >
@@ -51,8 +55,9 @@
         <span class="overlap_mob"><br /></span>
         <a
           #projectsNode
-          href="https://www.parabola.com/"
-          target="blanc"
+          href="#work"
+          disabled
+          tabindex="-1"
           class="information-content-text__action-part after-err-2"
           (mouseenter)="mouseenter($event)"
           (mouseleave)="mouseleave($event)"
@@ -96,7 +101,10 @@
   class="slideshow"
   [ngClass]="{ 'slideshow-show': showCv || showAnna || showProjects }"
 >
-  <div #followImageBox1 [ngClass]="{ 'slideshow-show': showCv }">
+  <div
+    #followImageBox1
+    [ngClass]="{ 'slideshow-show slideshow-show_cv': showCv }"
+  >
     <img
       *ngFor="let image of cvImages; let i = index"
       src="{{ image.src }}"
@@ -104,7 +112,10 @@
       class="slideshow__image slideshow__image_hide"
     />
   </div>
-  <div #followImageBox2 [ngClass]="{ 'slideshow-show': showAnna }">
+  <div
+    #followImageBox2
+    [ngClass]="{ 'slideshow-show slideshow-show_ann': showAnna }"
+  >
     <img
       *ngFor="let image of annaImages; let i = index"
       src="{{ image.src }}"
@@ -112,7 +123,10 @@
       class="slideshow__image slideshow__image_hide"
     />
   </div>
-  <div #followImageBox3 [ngClass]="{ 'slideshow-show': showProjects }">
+  <div
+    #followImageBox3
+    [ngClass]="{ 'slideshow-show slideshow-show_projects': showProjects }"
+  >
     <img
       *ngFor="let image of projectsImages; let i = index"
       src="{{ image.src }}"

@@ -7,6 +7,21 @@
   &-show {
     z-index: 105;
     opacity: 1;
+
+    &_cv {
+      .slideshow__image {
+        max-width: 190px;
+      }
+    }
+
+    &_ann {
+    }
+
+    &_projects {
+      .slideshow__image {
+        max-width: 280px;
+      }
+    }
   }
 
   &__image {

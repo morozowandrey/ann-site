@@ -53,21 +53,35 @@
         margin-right: 0;
       }
       @include media-breakpoint-down(768) {
-        color: #fff;
+        width: 100%;
+
+        font-size: 40px;
         line-height: 1.6;
+        font-weight: 100;
+        margin-right: 0;
+        font-stretch: normal;
+        font-style: normal;
       }
       @include media-breakpoint-down(375) {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 100;
         margin-right: 0;
       }
 
       &__action-part {
-        color: $gray;
         position: relative;
+
         max-width: none;
-        text-decoration: underline;
         margin-right: 0;
+
+        color: $gray;
+        text-decoration: underline;
+        outline: none;
+
+        &_false {
+          text-decoration: none;
+          margin-right: 0;
+        }
       }
     }
 
@@ -200,22 +214,15 @@
     display: inline;
   }
 
-  @include media-breakpoint-down(375) {
-    display: none;
-  }
-
   &_mob {
     display: none;
-
-    @include media-breakpoint-down(375) {
-      display: inline;
-    }
   }
 }
 
 @include media-breakpoint-down(768) {
   .after-err-1 {
     position: relative;
+
     &::after {
       content: "";
       position: absolute;
