@@ -33,11 +33,6 @@ export class PortfolioComponent implements OnInit {
       images: [
         {
           src:
-            "../../../assets/images/portfolio-assets/ars-data/ars-data-des.png",
-          alt: "ARS data app desktop screen"
-        },
-        {
-          src:
             "../../../assets/images/portfolio-assets/ars-data/ars-data-des_1.png",
           alt: "ARS data app desktop screen"
         },
@@ -65,6 +60,28 @@ export class PortfolioComponent implements OnInit {
           src:
             "../../../assets/images/portfolio-assets/ars-data/ars-data-mob_2.png",
           alt: "ARS data app mobile screen"
+        }
+      ]
+    },
+    {
+      title: "Restaurant guide",
+      subtitle: "Application design",
+      handle: "michelinImages",
+      images: [
+        {
+          src:
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_1.png",
+          alt: "Michelin mobile app screen"
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_2.png",
+          alt: "Michelin mobile app screen"
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_3.png",
+          alt: "Michelin mobile app screen"
         }
       ]
     },
@@ -121,6 +138,7 @@ export class PortfolioComponent implements OnInit {
         }
       ]
     },
+
     {
       title: "Lead Fuze",
       subtitle: "Website design, development support",
@@ -155,28 +173,6 @@ export class PortfolioComponent implements OnInit {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_6.png",
           alt: "Lead Fuze app screen"
-        }
-      ]
-    },
-    {
-      title: "Restaurant guide",
-      subtitle: "Application design",
-      handle: "michelinImages",
-      images: [
-        {
-          src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_1.png",
-          alt: "Michelin mobile app screen"
-        },
-        {
-          src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_2.png",
-          alt: "Michelin mobile app screen"
-        },
-        {
-          src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_3.png",
-          alt: "Michelin mobile app screen"
         }
       ]
     }
@@ -221,6 +217,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   toggleModal(projectImgsArr) {
+    if (window.innerWidth > 768) return;
     this.modalOpen = !this.modalOpen;
 
     this.reactiveService.isNavOpen.next(this.modalOpen);
@@ -266,7 +263,8 @@ export class PortfolioComponent implements OnInit {
     if (window.innerWidth > 768) {
       let portfolioContainerRect = this.portfolioContainer.nativeElement.getBoundingClientRect();
       let target = event.target.nextSibling;
-      let o = window.innerHeight / 2 - portfolioContainerRect.top - 300 / 2;
+      // let o = window.innerHeight / 2 - portfolioContainerRect.top - 300 / 2;
+      let o = -100;
 
       target.style.visibility = "visible";
 
