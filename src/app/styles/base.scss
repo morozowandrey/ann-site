@@ -2,7 +2,13 @@
 
 * {
   box-sizing: border-box;
-  cursor: url("src/assets/cursor/custom-cursor-plus.svg") 27 27, auto;
+  cursor: url("src/assets/cursor/active-cursor_2x.svg") 27 27, auto;
+  cursor: -webkit-image-set(
+        url("src/assets/cursor/active-cursor_2x.svg") 1x,
+        url("src/assets/cursor/active-cursor_2x.svg") 2x
+      )
+      27 27,
+    auto;
 }
 
 html {
