@@ -11,5 +11,7 @@ export class ReactiveService {
   public isModalOpen: BehaviorSubject<any> = new BehaviorSubject<any>(false);
   public fullPageApi: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
+  public isFirstScreen: BehaviorSubject<any> = new BehaviorSubject<any>(true);
+
   constructor() {}
 }

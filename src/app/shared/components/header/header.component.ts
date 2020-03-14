@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   fullpage_api: any;
   showSlogan: boolean = true;
   isHeaderFixed: boolean = false;
+  isFirstScreen: boolean = true;
 
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
@@ -38,6 +39,11 @@ export class HeaderComponent implements OnInit {
     this.reactiveService.isHeaderSticky.subscribe(
       val => (this.isHeaderFixed = val)
     );
+
+    this.reactiveService.isFirstScreen.subscribe(val => {
+      if (val) this.isFirstScreen = val;
+      this.cdr.detectChanges();
+    });
   }
 
   toggleNav(section) {

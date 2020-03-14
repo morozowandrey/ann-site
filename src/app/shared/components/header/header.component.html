@@ -1,22 +1,32 @@
 <div class="header header-padding-container" id="header">
-  <div class="wrapper container" [ngClass]="{ 'flex-between': isHeaderFixed }">
-    <a (click)="moveToSection('main')" class="header__logo" *ngIf="!navOpen">
-      Anna Yushchenko
-    </a>
+  <div class="wrapper container flex-between">
+    <div class="">
+      <a (click)="moveToSection('main')" class="header__logo" *ngIf="!navOpen">
+        Anna Yushchenko</a
+      >
 
-    <div
-      class="header-slogan"
-      [ngClass]="{ headerFadeIn: !isHeaderFixed, headerFadeOut: isHeaderFixed }"
-    >
-      <span class="header-slogan__part">designer who executes</span>
-      <span class="header-slogan__part">idea → </span>
-      <span class="header-slogan__part">concept → </span>
-      <span class="header-slogan__part">wireframing → </span>
-      <span class="header-slogan__part">design</span>
+      <div
+        class="header-slogan"
+        [ngClass]="{
+          headerFadeIn: !isHeaderFixed,
+          headerFadeOut: isHeaderFixed
+        }"
+      >
+        <span class="header-slogan__part">. designer who executes </span>
+        <span class="header-slogan__part">idea → </span>
+        <span class="header-slogan__part">concept → </span>
+        <span class="header-slogan__part">wireframing → </span>
+        <span class="header-slogan__part">design</span>
+      </div>
     </div>
 
     <button
-      *ngIf="!navOpen && isHeaderFixed"
+      [ngClass]="{
+        headerFadeIn: isHeaderFixed,
+        headerFadeOut: !isHeaderFixed
+      }"
+      *ngIf="isFirstScreen"
+      [hidden]="!navOpen && isHeaderFixed"
       class="header__switch"
       (click)="toggleNav(false)"
     ></button>

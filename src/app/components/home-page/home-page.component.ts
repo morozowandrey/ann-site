@@ -18,9 +18,10 @@ export class HomePageComponent implements OnInit {
       scrollOverflow: true,
       onLeave: (index, nextIndex, direction) => {
         if (index.index === 1) this.reactiveService.isHeaderSticky.next(false);
-        if (direction === "down")
+        if (direction === "down") {
+          this.reactiveService.isFirstScreen.next(false);
           this.reactiveService.isHeaderSticky.next(true);
-
+        }
         this.reactiveService.fullPageApi.subscribe(api => {
           if (api) {
             if (api.getActiveSection().anchor === "main") {
