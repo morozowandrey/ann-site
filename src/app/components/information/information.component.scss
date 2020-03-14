@@ -104,8 +104,6 @@
       }
 
       &-content {
-        max-width: 365px;
-
         &__text {
           @include text-mob;
           line-height: 1.4;
@@ -118,6 +116,10 @@
         }
         &__img {
           margin-right: 32px;
+
+          @include media-breakpoint-down(576) {
+            max-width: 100px;
+          }
 
           @include media-breakpoint-down(375) {
             margin-right: 24px;
@@ -137,7 +139,7 @@
           max-width: 211px;
         }
         .information-content-mobile-content__img {
-          max-height: 100px;
+          max-height: 130px;
         }
 
         @include media-breakpoint-down(375) {
@@ -166,7 +168,7 @@
 
         @include media-breakpoint-down(375) {
           .information-content-mobile-content__text {
-            max-width: 101px;
+            max-width: 130px;
           }
           .information-content-mobile-content__img {
             max-height: 80px;

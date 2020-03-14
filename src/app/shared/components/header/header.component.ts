@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   showSlogan: boolean = true;
   isHeaderFixed: boolean = false;
   isFirstScreen: boolean = true;
+  hideDelay: boolean = false;
 
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
@@ -36,9 +37,19 @@ export class HeaderComponent implements OnInit {
       this.cdr.detectChanges();
     });
 
-    this.reactiveService.isHeaderSticky.subscribe(
-      val => (this.isHeaderFixed = val)
-    );
+    this.reactiveService.isHeaderSticky.subscribe(val => {
+      this.isHeaderFixed = val;
+
+      if (this.isHeaderFixed) {
+        setTimeout(() => {
+          this.hideDelay = true;
+          this.cdr.detectChanges();
+        }, 500);
+      } else {
+        this.hideDelay = false;
+        this.cdr.detectChanges();
+      }
+    });
 
     this.reactiveService.isFirstScreen.subscribe(val => {
       if (val) this.isFirstScreen = val;

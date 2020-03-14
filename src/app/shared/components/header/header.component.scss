@@ -17,6 +17,12 @@ app-contacts-page :host {
   z-index: 102;
   background-color: #000;
 
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+  }
+
   &-padding-container {
     padding: 40px 0 24px;
 
@@ -36,6 +42,10 @@ app-contacts-page :host {
   &-slogan {
     @include logo-text;
     display: inline-block;
+
+    &_hide {
+      display: none;
+    }
 
     &-content {
     }
@@ -86,8 +96,8 @@ app-contacts-page :host {
     }
 
     @include media-breakpoint-down(768) {
-      width: 48px;
-      height: 28px;
+      min-width: 55px;
+      min-height: 32px;
       background-image: url(../../../../assets/icons/burger-menu.svg);
       background-repeat: no-repeat;
       background-position: center;
@@ -100,8 +110,10 @@ app-contacts-page :host {
     }
 
     @include media-breakpoint-down(375) {
-      width: 24px;
-      height: 14px;
+      min-width: 26px;
+      min-height: 19px;
+      width: 32px;
+      height: 19px;
     }
   }
 

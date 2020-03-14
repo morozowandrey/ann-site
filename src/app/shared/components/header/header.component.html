@@ -1,30 +1,15 @@
 <div class="header header-padding-container" id="header">
-  <div class="wrapper container flex-between">
+  <div class="wrapper container header-wrapper">
     <div class="">
       <a (click)="moveToSection('main')" class="header__logo" *ngIf="!navOpen">
         Anna Yushchenko</a
       >
-
-      <!-- <div
-        class="header-slogan"
-        [ngClass]="{
-          headerFadeIn: !isHeaderFixed,
-          headerFadeOut: isHeaderFixed
-        }"
-      >
-        <span class="header-slogan__part">. designer who executes </span>
-        <span class="header-slogan__part">idea → </span>
-        <span class="header-slogan__part">concept → </span>
-        <span class="header-slogan__part">wireframing → </span>
-        <span class="header-slogan__part">design</span>
-      </div>
-    </div> -->
-
       <span
         class="header-slogan"
         [ngClass]="{
           headerFadeIn: !isHeaderFixed,
-          headerFadeOut: isHeaderFixed
+          headerFadeOut: isHeaderFixed,
+          'header-slogan_hide': hideDelay
         }"
         >. designer&nbsp;
       </span>
@@ -32,7 +17,8 @@
         class="header-slogan"
         [ngClass]="{
           headerFadeIn: !isHeaderFixed,
-          headerFadeOut: isHeaderFixed
+          headerFadeOut: isHeaderFixed,
+          'header-slogan_hide': hideDelay
         }"
         >who executes&nbsp;
       </span>
@@ -40,7 +26,8 @@
         class="header-slogan"
         [ngClass]="{
           headerFadeIn: !isHeaderFixed,
-          headerFadeOut: isHeaderFixed
+          headerFadeOut: isHeaderFixed,
+          'header-slogan_hide': hideDelay
         }"
         >idea →&nbsp;
       </span>
@@ -48,7 +35,8 @@
         class="header-slogan"
         [ngClass]="{
           headerFadeIn: !isHeaderFixed,
-          headerFadeOut: isHeaderFixed
+          headerFadeOut: isHeaderFixed,
+          'header-slogan_hide': hideDelay
         }"
         >concept →&nbsp;
       </span>
@@ -56,7 +44,8 @@
         class="header-slogan"
         [ngClass]="{
           headerFadeIn: !isHeaderFixed,
-          headerFadeOut: isHeaderFixed
+          headerFadeOut: isHeaderFixed,
+          'header-slogan_hide': hideDelay
         }"
         >wireframing →
       </span>
@@ -64,7 +53,8 @@
         class="header-slogan"
         [ngClass]="{
           headerFadeIn: !isHeaderFixed,
-          headerFadeOut: isHeaderFixed
+          headerFadeOut: isHeaderFixed,
+          'header-slogan_hide': hideDelay
         }"
         >&nbsp;design</span
       >
