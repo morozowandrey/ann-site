@@ -5,7 +5,7 @@
         Anna Yushchenko</a
       >
 
-      <div
+      <!-- <div
         class="header-slogan"
         [ngClass]="{
           headerFadeIn: !isHeaderFixed,
@@ -18,6 +18,56 @@
         <span class="header-slogan__part">wireframing → </span>
         <span class="header-slogan__part">design</span>
       </div>
+    </div> -->
+
+      <span
+        class="header-slogan"
+        [ngClass]="{
+          headerFadeIn: !isHeaderFixed,
+          headerFadeOut: isHeaderFixed
+        }"
+        >. designer&nbsp;
+      </span>
+      <span
+        class="header-slogan"
+        [ngClass]="{
+          headerFadeIn: !isHeaderFixed,
+          headerFadeOut: isHeaderFixed
+        }"
+        >who executes&nbsp;
+      </span>
+      <span
+        class="header-slogan"
+        [ngClass]="{
+          headerFadeIn: !isHeaderFixed,
+          headerFadeOut: isHeaderFixed
+        }"
+        >idea →&nbsp;
+      </span>
+      <span
+        class="header-slogan"
+        [ngClass]="{
+          headerFadeIn: !isHeaderFixed,
+          headerFadeOut: isHeaderFixed
+        }"
+        >concept →&nbsp;
+      </span>
+      <span
+        class="header-slogan"
+        [ngClass]="{
+          headerFadeIn: !isHeaderFixed,
+          headerFadeOut: isHeaderFixed
+        }"
+        >wireframing →
+      </span>
+      <span
+        class="header-slogan"
+        [ngClass]="{
+          headerFadeIn: !isHeaderFixed,
+          headerFadeOut: isHeaderFixed
+        }"
+        >&nbsp;design</span
+      >
     </div>
 
     <button
@@ -25,8 +75,7 @@
         headerFadeIn: isHeaderFixed,
         headerFadeOut: !isHeaderFixed
       }"
-      *ngIf="isFirstScreen"
-      [hidden]="!navOpen && isHeaderFixed"
+      *ngIf="isFirstScreen && !navOpen"
       class="header__switch"
       (click)="toggleNav(false)"
     ></button>
