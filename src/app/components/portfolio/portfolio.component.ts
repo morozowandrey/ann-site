@@ -214,14 +214,19 @@ export class PortfolioComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.reactiveService.isModalOpen.subscribe(val => {
+      val ? (this.modalOpen = !val) : (this.modalOpen = val);
+    });
+  }
 
-  toggleModal(projectImgSrc) {
+  toggleModal(projectImgsArr) {
     this.modalOpen = !this.modalOpen;
+
     this.reactiveService.isNavOpen.next(this.modalOpen);
     this.reactiveService.isModalOpen.next({
       switch: this.modalOpen,
-      imgSrc: projectImgSrc
+      imgsArr: projectImgsArr
     });
   }
 

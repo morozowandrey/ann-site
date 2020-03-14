@@ -18,6 +18,16 @@
   (touchend)="outsideClick($event)"
 ></div>
 
-<div #modalContent *ngIf="modalOpen" class="modal flex-center">
-  <img src="{{ modalImgSrc }}" alt="" />
+<div #modalContent class="modal flex-center" *ngIf="modalOpen">
+  <div class="modal-wrap">
+    <div class="modal-slider">
+      <img
+        *ngFor="let image of modalImgsArr"
+        src="{{ image.src }}"
+        alt="{{ image.alt }}"
+        class="modal-slider__img"
+        (click)="slider.goTo('next')"
+      />
+    </div>
+  </div>
 </div>

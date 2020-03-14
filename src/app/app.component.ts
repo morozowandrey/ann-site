@@ -1,7 +1,15 @@
-import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  ChangeDetectorRef
+} from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { fader } from "./route-animations";
 import { ReactiveService } from "./services/reactive.service";
+
+import { tns } from "../../node_modules/tiny-slider/src/tiny-slider";
 
 @Component({
   selector: "app-root",
@@ -13,14 +21,18 @@ export class AppComponent implements OnInit {
   @ViewChild("modalContent") modalContent: ElementRef;
   @ViewChild("backdrop") backdrop: ElementRef;
 
+  slider: any;
   title = "ann-site";
   isHeaderFixed: boolean = false;
   isMobile: boolean = window.innerWidth < 768;
   outsideClickIterator: number = 0;
   modalOpen: boolean = false;
-  modalImgSrc: string = "";
+  modalImgsArr: any = [];
 
-  constructor(public reactiveService: ReactiveService) {}
+  constructor(
+    public reactiveService: ReactiveService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.reactiveService.isHeaderSticky.subscribe(
@@ -31,7 +43,26 @@ export class AppComponent implements OnInit {
       if (val) {
         val.switch ? (this.isHeaderFixed = false) : (this.isHeaderFixed = true);
         this.modalOpen = val.switch;
-        this.modalImgSrc = val.imgSrc;
+        this.modalImgsArr = val.imgsArr;
+
+        if (this.modalOpen) {
+          setTimeout(() => {
+            this.slider = tns({
+              container: ".modal-slider",
+              items: 1,
+              slideBy: 1,
+              mode: "carousel",
+              mouseDrag: true,
+              swipeAngle: 45,
+              nav: false,
+              controls: false,
+              loop: true,
+              speed: 0
+            });
+          });
+        }
+
+        this.cdr.detectChanges();
       }
     });
   }
