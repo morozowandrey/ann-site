@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
       { name: "og:type", content: "website" },
       { name: "og:title", content: "Anna Yushchenko" },
       { name: "og:description", content: "design portfolio" },
-      { name: "og:image", content: "" },
+      { name: "og:image", content: "../assets/images/site-link-image.png" },
 
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "https://annayushch.com/" },
