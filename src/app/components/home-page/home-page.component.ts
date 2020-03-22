@@ -17,20 +17,11 @@ export class HomePageComponent implements OnInit {
       navigation: false,
       scrollOverflow: true,
       onLeave: (index, nextIndex, direction) => {
-        if (index.index === 1) this.reactiveService.isHeaderSticky.next(false);
-        if (direction === "down") {
-          this.reactiveService.isFirstScreen.next(false);
+        if (index.anchor === "information" && direction === "up") {
+          this.reactiveService.isHeaderSticky.next(false);
+        } else {
           this.reactiveService.isHeaderSticky.next(true);
         }
-        this.reactiveService.fullPageApi.subscribe(api => {
-          if (api) {
-            if (api.getActiveSection().anchor === "main") {
-              this.reactiveService.leaveSection.next(1);
-            } else {
-              this.reactiveService.leaveSection.next(0);
-            }
-          }
-        });
       }
     };
   }

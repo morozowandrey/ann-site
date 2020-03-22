@@ -15,9 +15,7 @@ import { ReactiveService } from "src/app/services/reactive.service";
 export class HeaderComponent implements OnInit {
   navOpen: boolean = false;
   fullpage_api: any;
-  showSlogan: boolean = true;
   isHeaderFixed: boolean = false;
-  isFirstScreen: boolean = true;
   hideDelay: boolean = false;
 
   @ViewChild("fullpageRef") fp_directive: ElementRef;
@@ -32,11 +30,6 @@ export class HeaderComponent implements OnInit {
       this.fullpage_api = api;
     });
 
-    this.reactiveService.leaveSection.subscribe(val => {
-      this.showSlogan = val;
-      this.cdr.detectChanges();
-    });
-
     this.reactiveService.isHeaderSticky.subscribe(val => {
       this.isHeaderFixed = val;
 
@@ -49,11 +42,6 @@ export class HeaderComponent implements OnInit {
         this.hideDelay = false;
         this.cdr.detectChanges();
       }
-    });
-
-    this.reactiveService.isFirstScreen.subscribe(val => {
-      if (val) this.isFirstScreen = val;
-      this.cdr.detectChanges();
     });
   }
 

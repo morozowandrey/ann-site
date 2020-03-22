@@ -65,7 +65,7 @@
         headerFadeIn: isHeaderFixed,
         headerFadeOut: !isHeaderFixed
       }"
-      *ngIf="isFirstScreen && !navOpen"
+      *ngIf="isHeaderFixed && !navOpen"
       class="header__switch"
       (click)="toggleNav(false)"
     ></button>

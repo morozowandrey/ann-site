@@ -96,14 +96,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    this.reactiveService.fullPageApi.subscribe(api => {
-      if (api) {
-        if (api.getActiveSection().anchor === "main")
-          this.isHeaderFixed = false;
-      }
-    });
-  }
+  ngAfterViewInit(): void {}
 
   outsideClick(e) {
     this.backdrop.nativeElement.focus();
