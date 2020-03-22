@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
   }
 
   mouseenter(e) {
-    painter(e.target, "mouseenter", "#a7a59e");
+    // painter(e.target, "mouseenter", "#a7a59e");
   }
 
   mouseleave(e) {
-    painter(e.target, "mouseleave", "#a7a59e");
+    // painter(e.target, "mouseleave", "#a7a59e");
   }
 }

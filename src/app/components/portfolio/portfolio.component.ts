@@ -228,13 +228,13 @@ export class PortfolioComponent implements OnInit {
   }
 
   mouseenter(e, index) {
-    painter(e.target, e.type, "#a7a59e");
+    // painter(e.target, e.type, "#a7a59e");
     this.toggleSlideshowBox(true, index);
     if (this.followImagesNodesArr.length) this.projectEnter(e);
   }
 
   mouseleave(e, index) {
-    painter(e.target, e.type, "#a7a59e");
+    // painter(e.target, e.type, "#a7a59e");
     this.toggleSlideshowBox(false, index);
     if (this.followImagesNodesArr.length) this.projectLeave(e);
   }

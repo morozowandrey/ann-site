@@ -50,6 +50,10 @@
     }
     &__email {
       text-decoration: underline;
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }

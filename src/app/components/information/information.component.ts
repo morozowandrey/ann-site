@@ -121,7 +121,7 @@ export class InformationComponent implements OnInit {
   ngOnInit() {}
 
   mouseenter(e) {
-    painter(e.target, "mouseenter", "#a7a59e");
+    // painter(e.target, "mouseenter", "#a7a59e");
 
     if (!this.isMobile) {
       if (e.target === this.cvNode.nativeElement) {
@@ -144,7 +144,7 @@ export class InformationComponent implements OnInit {
   }
 
   mouseleave(e) {
-    painter(e.target, "mouseleave", "#a7a59e");
+    // painter(e.target, "mouseleave", "#a7a59e");
 
     if (!this.isMobile) {
       if (e.target === this.cvNode.nativeElement) {

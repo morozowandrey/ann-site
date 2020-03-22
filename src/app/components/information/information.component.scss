@@ -78,6 +78,10 @@
         text-decoration: underline;
         outline: none;
 
+        &:hover {
+          color: #fff;
+        }
+
         &_false {
           text-decoration: none;
           margin-right: 0;
