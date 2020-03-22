@@ -24,43 +24,6 @@
   }
 }
 
-.headerFadeIn {
-  animation: headerFadeIn 0.5s ease-in forwards;
-}
-@keyframes headerFadeIn {
-  0% {
-    opacity: 0;
-    // visibility: hidden;
-    // position: absolute;
-  }
-  50% {
-    position: relative;
-  }
-  100% {
-    opacity: 1;
-    // visibility: visible;
-  }
-}
-
-.headerFadeOut {
-  animation: headerFadeOut 0.5s ease-out forwards;
-}
-@keyframes headerFadeOut {
-  0% {
-    opacity: 1;
-    // visibility: visible;
-  }
-  50% {
-    opacity: 0;
-    // visibility: visible;
-  }
-  100% {
-    opacity: 0;
-    // visibility: hidden;
-    // position: absolute;
-  }
-}
-
 .marqueeAnimFirst {
   display: inline-block;
   transform: translate3d(0, 0, 0);
@@ -105,5 +68,91 @@
   }
   to {
     -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+// HEADER
+.headerFadeIn {
+  animation: headerFadeIn 0.5s ease-in forwards;
+}
+@keyframes headerFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headerFadeOut {
+  animation: headerFadeOut 0.5s ease-out forwards;
+}
+@keyframes headerFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+///////////////////////////////////////
+.headerLogoPartFadeIn_1 {
+  animation: headerLogoPartFadeIn_1 0.5s ease-in forwards;
+}
+@keyframes headerLogoPartFadeIn_1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headerLogoPartFadeIn_2 {
+  animation: headerLogoPartFadeIn_2 0.5s ease-in forwards 0.5s;
+}
+@keyframes headerLogoPartFadeIn_2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headerLogoPartFadeIn_3 {
+  animation: headerLogoPartFadeIn_3 0.5s ease-in forwards 0.8s;
+}
+@keyframes headerLogoPartFadeIn_3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headerLogoPartFadeIn_4 {
+  animation: headerLogoPartFadeIn_4 0.5s ease-in forwards 1.1s;
+}
+@keyframes headerLogoPartFadeIn_4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headerLogoPartFadeIn_5 {
+  animation: headerLogoPartFadeIn_5 0.5s ease-in forwards 1.4s;
+}
+@keyframes headerLogoPartFadeIn_5 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

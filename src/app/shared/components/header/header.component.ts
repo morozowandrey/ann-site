@@ -6,17 +6,31 @@ import {
   ChangeDetectorRef
 } from "@angular/core";
 import { ReactiveService } from "src/app/services/reactive.service";
+import { trigger, style, animate, transition } from "@angular/animations";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  styleUrls: ["./header.component.scss"],
+  animations: [
+    trigger("headerSwitchAnimation", [
+      transition(":enter", [
+        style({ opacity: 0 }),
+        animate("500ms", style({ opacity: 1 }))
+      ]),
+      transition(":leave", [
+        style({ opacity: 1 }),
+        animate("500ms", style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class HeaderComponent implements OnInit {
   navOpen: boolean = false;
   fullpage_api: any;
   isHeaderFixed: boolean = false;
   hideDelay: boolean = false;
+  animateLogo: boolean = true;
 
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
@@ -42,6 +56,10 @@ export class HeaderComponent implements OnInit {
         this.hideDelay = false;
         this.cdr.detectChanges();
       }
+    });
+
+    this.reactiveService.firstLoad.subscribe(val => {
+      if (val === false) this.animateLogo = false;
     });
   }
 

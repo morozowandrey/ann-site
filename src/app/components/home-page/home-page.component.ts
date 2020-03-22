@@ -17,6 +17,9 @@ export class HomePageComponent implements OnInit {
       navigation: false,
       scrollOverflow: true,
       onLeave: (index, nextIndex, direction) => {
+        localStorage.setItem("headerLogoAnimationTriggred", "true");
+        this.reactiveService.firstLoad.next(false);
+
         if (index.anchor === "information" && direction === "up") {
           this.reactiveService.isHeaderSticky.next(false);
         } else {

@@ -42,6 +42,7 @@ app-contacts-page :host {
   &-slogan {
     @include logo-text;
     display: inline-block;
+    opacity: 0;
 
     &_hide {
       display: none;
