@@ -6,6 +6,7 @@
   letter-spacing: 1px;
   color: #fff;
   text-transform: uppercase;
+  line-height: 1.5;
 
   @include media-breakpoint-down(1680) {
     font-size: 20px;
@@ -23,7 +24,7 @@
   }
 
   @include media-breakpoint-down(375) {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.88px;
   }
 }

@@ -58,7 +58,7 @@ app-contacts-page :host {
 
   &__switch {
     @include btn-reset;
-    @include label-sm;
+    @include text-mob;
 
     width: 82px;
     height: 20px;
@@ -67,9 +67,7 @@ app-contacts-page :host {
     position: relative;
 
     text-transform: uppercase;
-    font-size: 24px;
-    line-height: 0.83;
-    letter-spacing: 1.73px;
+    color: $gray;
 
     &:hover {
       color: #fff;
@@ -127,11 +125,11 @@ app-contacts-page :host {
     left: 0;
 
     @include media-breakpoint-down(1440) {
-      padding-top: 25px;
+      padding-top: 24px;
     }
 
     @include media-breakpoint-down(768) {
-      padding-top: 41px;
+      padding-top: 40px;
     }
 
     @include media-breakpoint-down(375) {
@@ -154,6 +152,7 @@ app-contacts-page :host {
         letter-spacing: 1px;
         color: #fff;
         text-transform: uppercase;
+        line-height: 1.5;
 
         &:first-of-type {
           margin-left: 0;
@@ -165,7 +164,7 @@ app-contacts-page :host {
         }
 
         @include media-breakpoint-down(1440) {
-          font-size: 16px;
+          font-size: 18px;
           letter-spacing: 1px;
         }
 
@@ -178,7 +177,7 @@ app-contacts-page :host {
 
         @include media-breakpoint-down(375) {
           margin-bottom: 32px;
-          font-size: 14px;
+          font-size: 16px;
           letter-spacing: 0.88px;
         }
       }
