@@ -46,6 +46,10 @@ app-contacts-page :host {
 
     &_hide {
       display: none;
+
+      &:nth-child(3) {
+        display: none;
+      }
     }
 
     &-content {
@@ -70,7 +74,8 @@ app-contacts-page :host {
     color: $gray;
 
     &:hover {
-      color: #fff;
+      color: transparent;
+      text-shadow: #fff 0 0 2px;
     }
 
     &:after {
@@ -100,7 +105,7 @@ app-contacts-page :host {
       background-image: url(../../../../assets/icons/burger-menu.svg);
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
+      background-size: contain;
 
       &:after {
         content: "";
@@ -109,6 +114,10 @@ app-contacts-page :host {
     }
 
     @include media-breakpoint-down(375) {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+
       min-width: 26px;
       min-height: 19px;
       width: 32px;
@@ -143,6 +152,7 @@ app-contacts-page :host {
 
       @include media-breakpoint-down(768) {
         flex-direction: column;
+        align-items: flex-start;
       }
 
       &__item {
@@ -153,6 +163,11 @@ app-contacts-page :host {
         color: #fff;
         text-transform: uppercase;
         line-height: 1.5;
+
+        &:hover {
+          color: transparent;
+          text-shadow: #fff 0 0 2px;
+        }
 
         &:first-of-type {
           margin-left: 0;
@@ -189,7 +204,7 @@ app-contacts-page :host {
   width: 94px;
   position: absolute;
   top: 0;
-  right: 2px;
+  right: 0px;
 
   &::after {
     content: "close";
@@ -213,7 +228,7 @@ app-contacts-page :host {
   }
 
   @include media-breakpoint-down(375) {
-    width: 24px;
-    height: 14px;
+    width: 32px;
+    height: 19px;
   }
 }

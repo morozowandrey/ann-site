@@ -6,7 +6,13 @@ import {
   ChangeDetectorRef
 } from "@angular/core";
 import { ReactiveService } from "src/app/services/reactive.service";
-import { trigger, style, animate, transition } from "@angular/animations";
+import {
+  trigger,
+  style,
+  animate,
+  transition,
+  state
+} from "@angular/animations";
 
 @Component({
   selector: "app-header",
@@ -30,7 +36,9 @@ export class HeaderComponent implements OnInit {
   fullpage_api: any;
   isHeaderFixed: boolean = false;
   hideDelay: boolean = false;
+  disableNavAnimation: boolean = false;
   animateLogo: boolean = true;
+  navState: string = "navClose";
 
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
@@ -65,6 +73,11 @@ export class HeaderComponent implements OnInit {
 
   toggleNav(section) {
     this.navOpen = !this.navOpen;
+    this.disableNavAnimation = !this.disableNavAnimation;
+
+    // this.navOpen ? (this.navState = "open") : (this.navState = "close");
+    // console.log(this.disableNavAnimation);
+
     this.fullpage_api.setAllowScrolling(!this.navOpen);
     this.fullpage_api.setKeyboardScrolling(!this.navOpen);
     this.reactiveService.isNavOpen.next(this.navOpen);

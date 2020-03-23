@@ -1,5 +1,8 @@
 <div class="header header-padding-container" id="header">
-  <div class="wrapper container header-wrapper">
+  <div
+    class="wrapper container header-wrapper"
+    [@.disabled]="disableNavAnimation"
+  >
     <div class="">
       <a (click)="moveToSection('main')" class="header__logo" *ngIf="!navOpen">
         Anna Yushchenko</a
@@ -67,7 +70,7 @@
     </div>
 
     <button
-      [@headerSwitchAnimation]
+      [@headerSwitchAnimation]="stateName"
       *ngIf="isHeaderFixed && !navOpen"
       class="header__switch"
       (click)="toggleNav(false)"

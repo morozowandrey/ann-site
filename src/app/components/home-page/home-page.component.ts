@@ -20,7 +20,10 @@ export class HomePageComponent implements OnInit {
         localStorage.setItem("headerLogoAnimationTriggred", "true");
         this.reactiveService.firstLoad.next(false);
 
-        if (index.anchor === "information" && direction === "up") {
+        if (
+          (index.anchor === "information" && direction === "up") ||
+          nextIndex.anchor === "main"
+        ) {
           this.reactiveService.isHeaderSticky.next(false);
         } else {
           this.reactiveService.isHeaderSticky.next(true);
