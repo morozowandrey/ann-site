@@ -70,11 +70,11 @@
           font-size: 40px;
         }
         @include media-breakpoint-down(768) {
-          font-size: 78px;
+          font-size: 64px;
           line-height: 1;
         }
         @include media-breakpoint-down(375) {
-          font-size: 40px;
+          font-size: 36px;
           margin-bottom: 8px;
         }
       }
