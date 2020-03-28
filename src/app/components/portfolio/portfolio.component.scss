@@ -5,24 +5,9 @@
     position: relative;
 
     height: 100%;
-    padding-top: 355px;
-    padding-bottom: 300px;
+    padding-top: 32vh;
+    padding-bottom: 70vh;
     display: flex;
-
-    @include media-breakpoint-down(1680) {
-      padding-top: 264px;
-    }
-
-    @include media-breakpoint-down(1440) {
-      padding-top: 200px;
-    }
-    @include media-breakpoint-down(768) {
-      padding-top: 358px;
-    }
-    @include media-breakpoint-down(375) {
-      padding-top: 220px;
-      padding-bottom: 300px;
-    }
   }
 
   &-list {
@@ -118,11 +103,14 @@
         bottom: 0;
         left: 0;
         width: calc(100vw - 208px);
-        height: 2px;
+        height: 4px;
         background-color: $gray;
 
         @include media-breakpoint-down(768) {
           width: calc(100vw - 120px);
+        }
+        @include media-breakpoint-down(576) {
+          height: 2px;
         }
         @include media-breakpoint-down(375) {
           width: calc(100vw - 64px);

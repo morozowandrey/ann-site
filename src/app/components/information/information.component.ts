@@ -106,13 +106,29 @@ export class InformationComponent implements OnInit {
     }
 
     if (this.showProjects) {
-      if (e.pageX > 1100) {
-        this.followImage.nativeElement.style.transform = `translate(${e.pageX -
-          305}px, ${e.pageY - 190}px)`;
+      if (
+        e.pageX >
+        e.target.getBoundingClientRect().left +
+          (e.target.getBoundingClientRect().right -
+            e.target.getBoundingClientRect().left) /
+            2
+      ) {
+        if (window.innerWidth > 1680) {
+          this.followImage.nativeElement.style.transform = `translate(${e.pageX -
+            370}px, ${e.pageY - 230}px)`;
+        } else if (window.innerWidth <= 1680) {
+          this.followImage.nativeElement.style.transform = `translate(${e.pageX -
+            305}px, ${e.pageY - 190}px)`;
+        }
         slideshow(e, this.followImagesNodesArr);
       } else {
-        this.followImage.nativeElement.style.transform = `translate(${e.pageX +
-          25}px, ${e.pageY - 190}px)`;
+        if (window.innerWidth > 1680) {
+          this.followImage.nativeElement.style.transform = `translate(${e.pageX +
+            25}px, ${e.pageY - 230}px)`;
+        } else if (window.innerWidth <= 1680) {
+          this.followImage.nativeElement.style.transform = `translate(${e.pageX +
+            25}px, ${e.pageY - 190}px)`;
+        }
         slideshow(e, this.followImagesNodesArr);
       }
     }

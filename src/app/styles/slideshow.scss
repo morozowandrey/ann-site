@@ -10,16 +10,31 @@
 
     &_cv {
       .slideshow__image {
-        max-width: 190px;
+        max-width: 280px;
+
+        @include media-breakpoint-down(1680) {
+          max-width: 190px;
+        }
       }
     }
 
     &_ann {
+      .slideshow__image {
+        max-width: 340px;
+
+        @include media-breakpoint-down(1680) {
+          max-width: 240px;
+        }
+      }
     }
 
     &_projects {
       .slideshow__image {
-        max-width: 280px;
+        max-width: 340px;
+
+        @include media-breakpoint-down(1680) {
+          max-width: 280px;
+        }
       }
     }
   }
