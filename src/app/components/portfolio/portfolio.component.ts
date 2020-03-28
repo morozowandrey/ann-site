@@ -21,7 +21,7 @@ export class PortfolioComponent implements OnInit {
   @ViewChild("portfolioContainer") portfolioContainer;
 
   modalOpen: boolean = false;
-
+  isMobile: boolean = window.innerWidth <= 768;
   showProject: boolean = false;
   followImagesNodesArr: Array<any> = [];
 
@@ -33,32 +33,44 @@ export class PortfolioComponent implements OnInit {
       images: [
         {
           src:
-            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_1.png",
+            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_1.jpg",
+          mobSrc:
+            "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_1.jpg",
           alt: "ARS data app desktop screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_2.png",
+            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_2.jpg",
+          mobSrc:
+            "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_2.jpg",
           alt: "ARS data app desktop screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_3.png",
+            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_3.jpg",
+          mobSrc:
+            "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_3.jpg",
           alt: "ARS data app desktop screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_4.png",
+            "../../../assets/images/portfolio-assets/ars-data/ars-data-des_4.jpg",
+          mobSrc:
+            "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_4.jpg",
           alt: "ARS data app desktop screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/ars-data/ars-data-mob_1.png",
+            "../../../assets/images/portfolio-assets/ars-data/ars-data-mob_1.jpg",
+          mobSrc:
+            "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-mob_1.jpg",
           alt: "ARS data app mobile screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/ars-data/ars-data-mob_2.png",
+            "../../../assets/images/portfolio-assets/ars-data/ars-data-mob_2.jpg",
+          mobSrc:
+            "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-mob_1.jpg",
           alt: "ARS data app mobile screen"
         }
       ]
@@ -70,18 +82,55 @@ export class PortfolioComponent implements OnInit {
       images: [
         {
           src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_1.png",
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_1.jpg",
           alt: "Michelin mobile app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_2.png",
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_2.jpg",
           alt: "Michelin mobile app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_3.png",
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_3.jpg",
           alt: "Michelin mobile app screen"
+        }
+      ]
+    },
+    {
+      title: "SparkySpot",
+      subtitle: "Website + app design, development support, branding",
+      handle: "sparkySpot",
+      images: [
+        {
+          src:
+            "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_1.jpg",
+          alt: "Sparky Spot app screen"
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_2.jpg",
+          alt: "Sparky Spot app screen"
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_3.jpg",
+          alt: "Sparky Spot app screen"
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_4.jpg",
+          alt: "Sparky Spot app screen"
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_5.jpg",
+          alt: "Sparky Spot app screen"
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_6.jpg",
+          alt: "Sparky Spot app screen"
         }
       ]
     },
@@ -91,27 +140,27 @@ export class PortfolioComponent implements OnInit {
       handle: "bnnImages",
       images: [
         {
-          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_1.png",
+          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_1.jpg",
           alt: "BNN app screen"
         },
         {
-          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_2.png",
+          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_2.jpg",
           alt: "BNN app screen"
         },
         {
-          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_3.png",
+          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_3.jpg",
           alt: "BNN app screen"
         },
         {
-          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_4.png",
+          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_4.jpg",
           alt: "BNN app screen"
         },
         {
-          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_5.png",
+          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_5.jpg",
           alt: "BNN app screen"
         },
         {
-          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_6.png",
+          src: "../../../assets/images/portfolio-assets/bnn/bnn-des_6.jpg",
           alt: "BNN app screen"
         }
       ]
@@ -123,82 +172,58 @@ export class PortfolioComponent implements OnInit {
       images: [
         {
           src:
-            "../../../assets/images/portfolio-assets/hong/hong-app_mob_1.png",
+            "../../../assets/images/portfolio-assets/hong/hong-app_mob_1.jpg",
           alt: "Hong mobile app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/hong/hong-app_mob_2.png",
+            "../../../assets/images/portfolio-assets/hong/hong-app_mob_2.jpg",
           alt: "Hong mobile app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/hong/hong-app_mob_3.png",
+            "../../../assets/images/portfolio-assets/hong/hong-app_mob_3.jpg",
           alt: "Hong mobile app screen"
         }
       ]
     },
-
     {
       title: "Lead Fuze",
-      subtitle: "Website design, development support",
+      subtitle: "Website design + app design, development support",
       handle: "leadFuzeImages",
       images: [
         {
           src:
-            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_1.png",
+            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_1.jpg",
           alt: "Lead Fuze app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_2.png",
+            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_2.jpg",
           alt: "Lead Fuze app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_3.png",
+            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_3.jpg",
           alt: "Lead Fuze app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_4.png",
+            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_4.jpg",
           alt: "Lead Fuze app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_5.png",
+            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_5.jpg",
           alt: "Lead Fuze app screen"
         },
         {
           src:
-            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_6.png",
+            "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_6.jpg",
           alt: "Lead Fuze app screen"
         }
       ]
     }
-    // {
-    //   title: "Kultur Punkt",
-    //   subtitle: "Application design",
-    //   imgSrc: "../../../assets/images/information-projects.png",
-    //   handle: "kulturPunktImages",
-    //   images: [
-    //     {
-    //       src:
-    //         "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_1.png",
-    //       alt: "Kultur Punkt mobile app screen"
-    //     },
-    //     {
-    //       src:
-    //         "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_2.png",
-    //       alt: "Kultur Punkt mobile app screen"
-    //     },
-    //     {
-    //       src:
-    //         "../../../assets/images/portfolio-assets/kulturpunkt/kulturpunkt-mob_3.png",
-    //       alt: "Kultur Punkt mobile app screen"
-    //     }
-    //   ]
-    // }
   ];
 
   constructor(public reactiveService: ReactiveService) {}

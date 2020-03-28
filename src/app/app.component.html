@@ -15,6 +15,24 @@
 <div #modalContent class="modal flex-center" *ngIf="modalOpen">
   <div class="modal-wrap">
     <div class="modal-slider">
+      <!-- <ng-container *ngIf="!isMobile">
+        <img
+          *ngFor="let image of modalImgsArr"
+          src="{{ image.src }}"
+          alt="{{ image.alt }}"
+          class="modal-slider__img"
+          (click)="slider.goTo('next')"
+        />
+      </ng-container>
+      <ng-container *ngIf="isMobile">
+        <img
+          *ngFor="let image of modalImgsArr"
+          src="{{ image.mobSrc }}"
+          alt="{{ image.alt }}"
+          class="modal-slider__img"
+          (click)="slider.goTo('next')"
+        />
+      </ng-container> -->
       <img
         *ngFor="let image of modalImgsArr"
         src="{{ image.src }}"

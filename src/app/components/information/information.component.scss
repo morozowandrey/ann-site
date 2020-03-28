@@ -6,11 +6,12 @@
   position: relative;
 
   @include media-breakpoint-down(768) {
+    height: auto;
     padding-top: 116px;
   }
 
-  @include media-breakpoint-down(375) {
-    padding-top: 72px;
+  @include media-breakpoint-down(576) {
+    padding-top: 0;
   }
 
   &-main {

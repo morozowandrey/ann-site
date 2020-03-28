@@ -17,6 +17,23 @@
         <div class="portfolio-slideshow">
           <div id="followImage{{ i + 1 }}" class="slideshow">
             <div id="followImageBox{{ i + 1 }}">
+              <!-- <ng-container *ngIf="!isMobile">
+                <img
+                  *ngFor="let image of project.images"
+                  src="{{ image.src }}"
+                  alt="{{ image.alt }}"
+                  class="slideshow__image"
+                />
+              </ng-container>
+              <ng-container *ngIf="isMobile">
+                <img
+                  *ngFor="let image of project.images"
+                  src="{{ image.mobSrc }}"
+                  alt="{{ image.alt }}"
+                  class="slideshow__image"
+                />
+              </ng-container> -->
+
               <img
                 *ngFor="let image of project.images"
                 src="{{ image.src }}"

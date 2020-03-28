@@ -8,6 +8,11 @@
     padding-top: 32vh;
     padding-bottom: 70vh;
     display: flex;
+
+    @include media-breakpoint-down(768) {
+      height: auto;
+      padding-bottom: 55vh;
+    }
   }
 
   &-list {

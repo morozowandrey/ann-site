@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   slider: any;
   title = "ann-site";
   isHeaderFixed: boolean = false;
-  isMobile: boolean = window.innerWidth < 768;
+  isMobile: boolean = window.innerWidth <= 768;
   outsideClickIterator: number = 0;
   modalOpen: boolean = false;
   modalImgsArr: any = [];
