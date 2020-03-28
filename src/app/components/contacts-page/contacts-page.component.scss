@@ -31,6 +31,7 @@
 
       @include media-breakpoint-down(1440) {
         @include text-desk;
+        font-size: 41px;
       }
 
       @include media-breakpoint-down(768) {

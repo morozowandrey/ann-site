@@ -11,6 +11,7 @@
 }
 
 .contacts {
+  // display: none;
   width: 100%;
   padding: 40px 104px;
 
@@ -26,6 +27,22 @@
     padding: 40px 0;
   }
 
+  &_desk {
+    display: block;
+
+    @include media-breakpoint-down(768) {
+      display: none;
+    }
+  }
+
+  &_mob {
+    display: none;
+
+    @include media-breakpoint-down(768) {
+      display: block;
+    }
+  }
+
   &__item {
     position: relative;
 
@@ -38,7 +55,12 @@
     color: $gray;
 
     &:hover {
-      color: #fff;
+      color: transparent;
+      text-shadow: #fff 0 0 3px;
+
+      &::before {
+        filter: blur(2px);
+      }
     }
 
     @include media-breakpoint-down(1680) {

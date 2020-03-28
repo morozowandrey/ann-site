@@ -4,11 +4,12 @@ $grid-breakpoints: (
   375: 375px,
   576: 576px,
   768: 768px,
+  1024: 1024px,
   1366: 1366px,
   1440: 1440px,
   1536: 1536px,
   1680: 1680px,
-  1920: 1920px
+  1920: 1920px,
 ) !default;
 
 // Breakpoint viewport sizes and media queries.
@@ -27,17 +28,9 @@ $grid-breakpoints: (
 //    md
 //    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))
 //    md
-@function breakpoint-next(
-  $name,
-  $breakpoints: $grid-breakpoints,
-  $breakpoint-names: map-keys($breakpoints)
-) {
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
   $n: index($breakpoint-names, $name);
-  @return if(
-    $n < length($breakpoint-names),
-    nth($breakpoint-names, $n + 1),
-    null
-  );
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
 }
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.
