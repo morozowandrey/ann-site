@@ -330,7 +330,7 @@ export class PortfolioComponent implements OnInit {
     }
   }
 
-  toggleVisibility(target) {
+  toggleVisibility(target): any {
     target.style.visibility = "hidden";
     this.showProject = false;
     this.followImagesNodesArr = [];
