@@ -253,13 +253,11 @@ export class PortfolioComponent implements OnInit {
   }
 
   mouseenter(e, index) {
-    // painter(e.target, e.type, "#a7a59e");
     this.toggleSlideshowBox(true, index);
     if (this.followImagesNodesArr.length) this.projectEnter(e);
   }
 
   mouseleave(e, index) {
-    // painter(e.target, e.type, "#a7a59e");
     this.toggleSlideshowBox(false, index);
     if (this.followImagesNodesArr.length) this.projectLeave(e);
   }
@@ -286,10 +284,12 @@ export class PortfolioComponent implements OnInit {
 
   projectEnter(event) {
     if (window.innerWidth > 768) {
-      let portfolioContainerRect = this.portfolioContainer.nativeElement.getBoundingClientRect();
-      let target = event.target.nextSibling;
+      // let portfolioContainerRect = this.portfolioContainer.nativeElement.getBoundingClientRect();
       // let o = window.innerHeight / 2 - portfolioContainerRect.top - 300 / 2;
+      let target = event.target.nextSibling;
       let o = -100;
+
+      console.log(target);
 
       target.style.visibility = "visible";
 
@@ -325,13 +325,15 @@ export class PortfolioComponent implements OnInit {
         rotation: this.rand(30, 60),
         force3D: !0,
         ease: Power2.easeIn,
-        onComplete: function() {
-          target.style.visibility = "hidden";
-          this.showProject = false;
-          this.followImagesNodesArr = [];
-        }
+        onComplete: this.toggleVisibility(target)
       });
     }
+  }
+
+  toggleVisibility(target) {
+    target.style.visibility = "hidden";
+    this.showProject = false;
+    this.followImagesNodesArr = [];
   }
 
   rand(e, t) {
