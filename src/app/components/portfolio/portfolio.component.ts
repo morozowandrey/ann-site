@@ -275,21 +275,13 @@ export class PortfolioComponent implements OnInit {
       targetParent.classList.add("slideshow-show");
     } else {
       return;
-      // this.followImagesNodesArr.forEach(image => {
-      //   image.classList.add("slideshow__image_hide");
-      // });
-      // this.followImagesNodesArr = [];
     }
   }
 
   projectEnter(event) {
     if (window.innerWidth > 768) {
-      // let portfolioContainerRect = this.portfolioContainer.nativeElement.getBoundingClientRect();
-      // let o = window.innerHeight / 2 - portfolioContainerRect.top - 300 / 2;
       let target = event.target.nextSibling;
       let o = -100;
-
-      console.log(target);
 
       target.style.visibility = "visible";
 
