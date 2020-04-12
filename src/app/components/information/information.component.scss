@@ -11,7 +11,7 @@
   }
 
   @include media-breakpoint-down(576) {
-    padding-top: 0;
+    padding-top: 40px;
   }
 
   &-main {
@@ -130,10 +130,10 @@
 
       &_top {
         justify-content: flex-start;
-        margin-bottom: 62px;
+        margin-bottom: 30px;
 
         @include media-breakpoint-down(375) {
-          margin-bottom: 33px;
+          margin-bottom: 20px;
         }
 
         .information-content-mobile-content__text {
@@ -154,10 +154,10 @@
       }
       &_bottom {
         justify-content: flex-end;
-        margin-top: 93px;
+        margin-top: 50px;
 
         @include media-breakpoint-down(375) {
-          margin-top: 44px;
+          margin-top: 30px;
         }
 
         .information-content-mobile-content__img {

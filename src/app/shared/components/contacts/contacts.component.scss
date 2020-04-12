@@ -46,7 +46,7 @@
     position: relative;
 
     margin-right: 104px;
-    padding-left: 34px;
+    padding-left: 26px;
     font-size: 24px;
     line-height: 0.83;
 
@@ -64,60 +64,59 @@
 
     @include media-breakpoint-down(1680) {
       font-size: 20px;
-      padding-left: 30px;
+      padding-left: 24px;
       line-height: 1;
     }
 
     @include media-breakpoint-down(1366) {
       margin-right: 62px;
-      padding-left: 24px;
       font-size: 16px;
       line-height: 1.25;
     }
 
     @include media-breakpoint-down(768) {
       margin-right: 72px;
-      padding-left: 28px;
       font-size: 24px;
       line-height: 0.83;
     }
 
     @include media-breakpoint-down(375) {
       margin-right: 40px;
-      padding-left: 20px;
+      padding-left: 16px;
       font-size: 16px;
       line-height: 1.25;
     }
 
     &::before {
       content: "";
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       position: absolute;
       left: 0;
-      top: 1px;
+      top: 3px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
 
       @include media-breakpoint-down(1680) {
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
       }
 
       @include media-breakpoint-down(1366) {
-        width: 12px;
-        height: 12px;
+        top: 0;
       }
 
       @include media-breakpoint-down(768) {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
+        top: 3px;
       }
 
       @include media-breakpoint-down(375) {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
+        top: 2px;
       }
     }
 

@@ -3,7 +3,7 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  HostListener
+  HostListener,
 } from "@angular/core";
 import { TweenLite, Power2 } from "gsap";
 import { SlowMo } from "gsap/dist/EasePack";
@@ -14,7 +14,7 @@ import { slideshow } from "src/app/helpers/slideshow";
 @Component({
   selector: "portfolio",
   templateUrl: "./portfolio.component.html",
-  styleUrls: ["./portfolio.component.scss"]
+  styleUrls: ["./portfolio.component.scss"],
 })
 export class PortfolioComponent implements OnInit {
   @ViewChild("modalContent") modalContent: ElementRef;
@@ -36,66 +36,44 @@ export class PortfolioComponent implements OnInit {
             "../../../assets/images/portfolio-assets/ars-data/ars-data-des_1.jpg",
           mobSrc:
             "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_1.jpg",
-          alt: "ARS data app desktop screen"
+          alt: "ARS data app desktop screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/ars-data/ars-data-des_2.jpg",
           mobSrc:
             "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_2.jpg",
-          alt: "ARS data app desktop screen"
+          alt: "ARS data app desktop screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/ars-data/ars-data-des_3.jpg",
           mobSrc:
             "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_3.jpg",
-          alt: "ARS data app desktop screen"
+          alt: "ARS data app desktop screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/ars-data/ars-data-des_4.jpg",
           mobSrc:
             "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-des_4.jpg",
-          alt: "ARS data app desktop screen"
+          alt: "ARS data app desktop screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/ars-data/ars-data-mob_1.jpg",
           mobSrc:
             "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-mob_1.jpg",
-          alt: "ARS data app mobile screen"
+          alt: "ARS data app mobile screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/ars-data/ars-data-mob_2.jpg",
           mobSrc:
             "../../../assets/images/portfolio-assets_mob/ars-data/ars-data-mob_1.jpg",
-          alt: "ARS data app mobile screen"
-        }
-      ]
-    },
-    {
-      title: "Restaurant guide",
-      subtitle: "Application design",
-      handle: "michelinImages",
-      images: [
-        {
-          src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_1.jpg",
-          alt: "Michelin mobile app screen"
+          alt: "ARS data app mobile screen",
         },
-        {
-          src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_2.jpg",
-          alt: "Michelin mobile app screen"
-        },
-        {
-          src:
-            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_3.jpg",
-          alt: "Michelin mobile app screen"
-        }
-      ]
+      ],
     },
     {
       title: "SparkySpot",
@@ -105,34 +83,56 @@ export class PortfolioComponent implements OnInit {
         {
           src:
             "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_1.jpg",
-          alt: "Sparky Spot app screen"
+          alt: "Sparky Spot app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_2.jpg",
-          alt: "Sparky Spot app screen"
+          alt: "Sparky Spot app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_3.jpg",
-          alt: "Sparky Spot app screen"
+          alt: "Sparky Spot app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_4.jpg",
-          alt: "Sparky Spot app screen"
+          alt: "Sparky Spot app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_5.jpg",
-          alt: "Sparky Spot app screen"
+          alt: "Sparky Spot app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/sparky-spot/sparky-spot_6.jpg",
-          alt: "Sparky Spot app screen"
-        }
-      ]
+          alt: "Sparky Spot app screen",
+        },
+      ],
+    },
+    {
+      title: "Restaurant guide",
+      subtitle: "Application design",
+      handle: "michelinImages",
+      images: [
+        {
+          src:
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_1.jpg",
+          alt: "Michelin mobile app screen",
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_2.jpg",
+          alt: "Michelin mobile app screen",
+        },
+        {
+          src:
+            "../../../assets/images/portfolio-assets/guide-app/guide-app_mob_3.jpg",
+          alt: "Michelin mobile app screen",
+        },
+      ],
     },
     {
       title: "Bnn clothing",
@@ -141,29 +141,29 @@ export class PortfolioComponent implements OnInit {
       images: [
         {
           src: "../../../assets/images/portfolio-assets/bnn/bnn-des_1.jpg",
-          alt: "BNN app screen"
+          alt: "BNN app screen",
         },
         {
           src: "../../../assets/images/portfolio-assets/bnn/bnn-des_2.jpg",
-          alt: "BNN app screen"
+          alt: "BNN app screen",
         },
         {
           src: "../../../assets/images/portfolio-assets/bnn/bnn-des_3.jpg",
-          alt: "BNN app screen"
+          alt: "BNN app screen",
         },
         {
           src: "../../../assets/images/portfolio-assets/bnn/bnn-des_4.jpg",
-          alt: "BNN app screen"
+          alt: "BNN app screen",
         },
         {
           src: "../../../assets/images/portfolio-assets/bnn/bnn-des_5.jpg",
-          alt: "BNN app screen"
+          alt: "BNN app screen",
         },
         {
           src: "../../../assets/images/portfolio-assets/bnn/bnn-des_6.jpg",
-          alt: "BNN app screen"
-        }
-      ]
+          alt: "BNN app screen",
+        },
+      ],
     },
     {
       title: "Hong",
@@ -173,19 +173,19 @@ export class PortfolioComponent implements OnInit {
         {
           src:
             "../../../assets/images/portfolio-assets/hong/hong-app_mob_1.jpg",
-          alt: "Hong mobile app screen"
+          alt: "Hong mobile app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/hong/hong-app_mob_2.jpg",
-          alt: "Hong mobile app screen"
+          alt: "Hong mobile app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/hong/hong-app_mob_3.jpg",
-          alt: "Hong mobile app screen"
-        }
-      ]
+          alt: "Hong mobile app screen",
+        },
+      ],
     },
     {
       title: "Lead Fuze",
@@ -195,35 +195,54 @@ export class PortfolioComponent implements OnInit {
         {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_1.jpg",
-          alt: "Lead Fuze app screen"
+          alt: "Lead Fuze app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_2.jpg",
-          alt: "Lead Fuze app screen"
+          alt: "Lead Fuze app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_3.jpg",
-          alt: "Lead Fuze app screen"
+          alt: "Lead Fuze app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_4.jpg",
-          alt: "Lead Fuze app screen"
+          alt: "Lead Fuze app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_5.jpg",
-          alt: "Lead Fuze app screen"
+          alt: "Lead Fuze app screen",
         },
         {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_6.jpg",
-          alt: "Lead Fuze app screen"
-        }
-      ]
-    }
+          alt: "Lead Fuze app screen",
+        },
+      ],
+    },
+    {
+      title: "Book spreads",
+      subtitle: "Some experiments",
+      handle: "bookSpreads",
+      images: [
+        {
+          src: "../../../assets/images/portfolio-assets/book/book_1.jpg",
+          alt: "Book spreads",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/book/book_2.jpg",
+          alt: "Book spreads",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/book/book_3.jpg",
+          alt: "Book spreads",
+        },
+      ],
+    },
   ];
 
   constructor(public reactiveService: ReactiveService) {}
@@ -236,7 +255,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.reactiveService.isModalOpen.subscribe(val => {
+    this.reactiveService.isModalOpen.subscribe((val) => {
       val ? (this.modalOpen = !val) : (this.modalOpen = val);
     });
   }
@@ -248,7 +267,7 @@ export class PortfolioComponent implements OnInit {
     this.reactiveService.isNavOpen.next(this.modalOpen);
     this.reactiveService.isModalOpen.next({
       switch: this.modalOpen,
-      imgsArr: projectImgsArr
+      imgsArr: projectImgsArr,
     });
   }
 
@@ -292,7 +311,7 @@ export class PortfolioComponent implements OnInit {
           top: o,
           x: "-100%",
           rotation: this.rand(-25, -20),
-          force3D: !0
+          force3D: !0,
         },
         {
           top: o,
@@ -300,9 +319,9 @@ export class PortfolioComponent implements OnInit {
           rotation: this.rand(30, 35),
           force3D: !0,
           ease: SlowMo.ease.config(0.95, 0.72, false),
-          onComplete: function() {
+          onComplete: function () {
             // target.style.visibility = "hidden";
-          }
+          },
         }
       );
     }
@@ -317,7 +336,7 @@ export class PortfolioComponent implements OnInit {
         rotation: this.rand(30, 60),
         force3D: !0,
         ease: Power2.easeIn,
-        onComplete: this.toggleVisibility(target)
+        onComplete: this.toggleVisibility(target),
       });
     }
   }

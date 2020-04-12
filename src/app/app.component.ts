@@ -3,7 +3,7 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { fader } from "./route-animations";
@@ -16,7 +16,7 @@ import { Meta } from "@angular/platform-browser";
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
-  animations: [fader]
+  animations: [fader],
 })
 export class AppComponent implements OnInit {
   @ViewChild("modalContent") modalContent: ElementRef;
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
       {
         name: "keywords",
         content:
-          "web de, website, logo design, graphic design, website design, website builder, website templates, web development, web page, design, frontend, web designer"
+          "web dev, website, logo design, graphic design, website design, website builder, website templates, web development, web page, design, frontend, web designer",
       },
       { name: "author", content: "Anna Yushchenko and Andrey Morozow" },
       { name: "robots", content: "index,follow" },
@@ -58,17 +58,17 @@ export class AppComponent implements OnInit {
       { name: "twitter:site", content: "https://annayushch.com/" },
       {
         name: "twitter:description",
-        content: "Anna Yushchenko design portfolio"
-      }
+        content: "Anna Yushchenko design portfolio",
+      },
     ]);
   }
 
   ngOnInit(): void {
     this.reactiveService.isHeaderSticky.subscribe(
-      val => (this.isHeaderFixed = val)
+      (val) => (this.isHeaderFixed = val)
     );
 
-    this.reactiveService.isModalOpen.subscribe(val => {
+    this.reactiveService.isModalOpen.subscribe((val) => {
       if (val) {
         val.switch ? (this.isHeaderFixed = false) : (this.isHeaderFixed = true);
         this.modalOpen = val.switch;
@@ -86,7 +86,7 @@ export class AppComponent implements OnInit {
               nav: false,
               controls: false,
               loop: true,
-              speed: 0
+              speed: 0,
             });
           });
         }
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
     ) {
       this.reactiveService.isModalOpen.next({
         switch: false,
-        imgSrc: ""
+        imgSrc: "",
       });
       this.reactiveService.isNavOpen.next(false);
       this.outsideClickIterator = 0;
