@@ -226,7 +226,7 @@ export class PortfolioComponent implements OnInit {
     },
     {
       title: "Book spreads",
-      subtitle: "Some experiments",
+      subtitle: "Book/zine concepts",
       handle: "bookSpreads",
       images: [
         {

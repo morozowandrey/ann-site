@@ -46,12 +46,18 @@ export class AppComponent implements OnInit {
       },
       { name: "author", content: "Anna Yushchenko and Andrey Morozow" },
       { name: "robots", content: "index,follow" },
-      { name: "description", content: "design portfolio" },
+      {
+        name: "description",
+        content: "designer who executes idea → concept → wireframing → design",
+      },
 
       { name: "og:site_name", content: "Anna Yushchenko" },
       { name: "og:type", content: "website" },
       { name: "og:title", content: "Anna Yushchenko" },
-      { name: "og:description", content: "design portfolio" },
+      {
+        name: "og:description",
+        content: "designer who executes idea → concept → wireframing → design",
+      },
       { name: "og:image", content: "../assets/images/site-link-image.png" },
 
       { name: "twitter:card", content: "summary" },
