@@ -123,6 +123,22 @@ app-contacts-page :host {
       width: 32px;
       height: 19px;
     }
+
+    // &_desk {
+    //   @include media-breakpoint-down(768) {
+    //     display: none;
+    //   }
+    // }
+
+    // &_mob {
+    //   display: none;
+    //   @include media-breakpoint-down(768) {
+    //     display: block;
+    //   }
+    // }
+
+    // &_nav {
+    // }
   }
 
   &-nav {

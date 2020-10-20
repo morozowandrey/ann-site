@@ -69,10 +69,19 @@
       >
     </div>
 
+    <!-- <button
+      [@headerSwitchAnimation]="showNawSwitch ? 'open' : 'closed'"
+      class="header__switch header__switch_mob"
+      (click)="toggleNav(false)"
+    ></button> -->
+
     <button
-      [@headerSwitchAnimation]="stateName"
-      *ngIf="isHeaderFixed && !navOpen"
-      class="header__switch"
+      [@headerSwitchAnimation]="
+        showNawSwitch
+          ? { value: 'open', params: { animation: transitionConfigOpen } }
+          : { value: 'closed', params: { animation: transitionConfigClosed } }
+      "
+      class="header__switch header__switch_mob"
       (click)="toggleNav(false)"
     ></button>
 
@@ -93,7 +102,10 @@
         <p class="header-nav-container__item" (click)="toggleNav('contacts')">
           Contact
         </p>
-        <button class="header__switch" (click)="toggleNav(false)"></button>
+        <button
+          class="header__switch header__switch_nav"
+          (click)="toggleNav(false)"
+        ></button>
       </div>
     </nav>
   </div>

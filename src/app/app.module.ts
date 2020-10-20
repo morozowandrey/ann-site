@@ -14,6 +14,7 @@ import { InformationComponent } from "./components/information/information.compo
 import { HomePageComponent } from "./components/home-page/home-page.component";
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
 import { ContactsPageComponent } from "./components/contacts-page/contacts-page.component";
+import { GoogleAnalyticsService } from "./services/google-analytics.service";
 
 @NgModule({
   declarations: [
@@ -22,16 +23,16 @@ import { ContactsPageComponent } from "./components/contacts-page/contacts-page.
     InformationComponent,
     HomePageComponent,
     ContactsPageComponent,
-    PortfolioComponent
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    AngularFullpageModule
+    AngularFullpageModule,
   ],
-  providers: [ReactiveService],
-  bootstrap: [AppComponent]
+  providers: [ReactiveService, GoogleAnalyticsService],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

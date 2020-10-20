@@ -3,7 +3,7 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from "@angular/core";
 import { ReactiveService } from "src/app/services/reactive.service";
 import {
@@ -11,7 +11,7 @@ import {
   style,
   animate,
   transition,
-  state
+  state,
 } from "@angular/animations";
 
 @Component({
@@ -20,16 +20,20 @@ import {
   styleUrls: ["./header.component.scss"],
   animations: [
     trigger("headerSwitchAnimation", [
-      transition(":enter", [
-        style({ opacity: 0 }),
-        animate("500ms", style({ opacity: 1 }))
-      ]),
-      transition(":leave", [
-        style({ opacity: 1 }),
-        animate("500ms", style({ opacity: 0 }))
-      ])
-    ])
-  ]
+      state("open", style({ opacity: 1 })),
+      state("closed", style({ opacity: 0 })),
+      transition(
+        "open => closed",
+        [animate("{{animation}}", style({ opacity: 0 }))],
+        { params: { animation: "0ms" } }
+      ),
+      transition(
+        "closed => open",
+        [animate("{{animation}}", style({ opacity: 1 }))],
+        { params: { animation: "0ms" } }
+      ),
+    ]),
+  ],
 })
 export class HeaderComponent implements OnInit {
   navOpen: boolean = false;
@@ -38,7 +42,11 @@ export class HeaderComponent implements OnInit {
   hideDelay: boolean = false;
   disableNavAnimation: boolean = false;
   animateLogo: boolean = true;
-  navState: string = "navClose";
+  navState: string = "close";
+
+  showNawSwitch: boolean = false;
+  transitionConfigOpen = "";
+  transitionConfigClosed = "";
 
   @ViewChild("fullpageRef") fp_directive: ElementRef;
 
@@ -48,12 +56,14 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.reactiveService.fullPageApi.subscribe(api => {
+    this.reactiveService.fullPageApi.subscribe((api) => {
       this.fullpage_api = api;
     });
 
-    this.reactiveService.isHeaderSticky.subscribe(val => {
+    this.reactiveService.isHeaderSticky.subscribe((val) => {
       this.isHeaderFixed = val;
+
+      this.showNawSwitch = this.checKshowNawSwitch("subscribe");
 
       if (this.isHeaderFixed) {
         setTimeout(() => {
@@ -66,16 +76,17 @@ export class HeaderComponent implements OnInit {
       }
     });
 
-    this.reactiveService.firstLoad.subscribe(val => {
+    this.reactiveService.firstLoad.subscribe((val) => {
       if (val === false) this.animateLogo = false;
     });
   }
 
   toggleNav(section) {
     this.navOpen = !this.navOpen;
+    this.showNawSwitch = this.checKshowNawSwitch("toggleNav");
     this.disableNavAnimation = !this.disableNavAnimation;
 
-    // this.navOpen ? (this.navState = "open") : (this.navState = "close");
+    this.navOpen ? (this.navState = "open") : (this.navState = "close");
     // console.log(this.disableNavAnimation);
 
     this.fullpage_api.setAllowScrolling(!this.navOpen);
@@ -89,5 +100,19 @@ export class HeaderComponent implements OnInit {
 
   moveToSection(section) {
     this.fullpage_api.moveTo(section);
+  }
+
+  checKshowNawSwitch(method) {
+    if (this.isHeaderFixed && !this.navOpen) {
+      this.transitionConfigOpen = method == "toggleNav" ? "0ms" : "500ms 500ms";
+
+      this.cdr.detectChanges();
+      return true;
+    } else {
+      this.transitionConfigClosed = method == "toggleNav" ? "0ms" : "500ms";
+
+      this.cdr.detectChanges();
+      return false;
+    }
   }
 }

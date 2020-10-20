@@ -86,6 +86,7 @@
 
       &__subtitle {
         @include text-mob;
+        font-family: $t-ff;
         color: $gray;
 
         position: absolute;
@@ -98,7 +99,6 @@
         }
 
         @include media-breakpoint-down(1440) {
-          font-size: 18px;
           line-height: 1.25;
         }
 
