@@ -140,6 +140,25 @@ export class PortfolioComponent implements OnInit {
       ],
     },
     {
+      title: "Book spreads",
+      subtitle: "Book/zine concepts",
+      handle: "bookSpreads",
+      images: [
+        {
+          src: "../../../assets/images/portfolio-assets/book/book_1.jpg",
+          alt: "Book spreads",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/book/book_2.jpg",
+          alt: "Book spreads",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/book/book_3.jpg",
+          alt: "Book spreads",
+        },
+      ],
+    },
+    {
       title: "Restaurant guide",
       subtitle: "Application design",
       handle: "michelinImages",
@@ -248,25 +267,6 @@ export class PortfolioComponent implements OnInit {
           src:
             "../../../assets/images/portfolio-assets/leadfuze/leadfuze-des_6.jpg",
           alt: "Lead Fuze app screen",
-        },
-      ],
-    },
-    {
-      title: "Book spreads",
-      subtitle: "Book/zine concepts",
-      handle: "bookSpreads",
-      images: [
-        {
-          src: "../../../assets/images/portfolio-assets/book/book_1.jpg",
-          alt: "Book spreads",
-        },
-        {
-          src: "../../../assets/images/portfolio-assets/book/book_2.jpg",
-          alt: "Book spreads",
-        },
-        {
-          src: "../../../assets/images/portfolio-assets/book/book_3.jpg",
-          alt: "Book spreads",
         },
       ],
     }
