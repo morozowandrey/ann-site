@@ -48,6 +48,10 @@ export class InformationComponent implements OnInit {
   ];
   projectsImages: Array<any> = [
     {
+      src: "../../../assets/images/information-projects/kc2.png",
+      alt: "Annas cv image"
+    },
+    {
       src: "../../../assets/images/information-projects/1.png",
       alt: "Annas cv image"
     },
@@ -60,6 +64,10 @@ export class InformationComponent implements OnInit {
       alt: "Annas cv image"
     },
     {
+      src: "../../../assets/images/information-projects/func.png",
+      alt: "Annas cv image"
+    },
+    {
       src: "../../../assets/images/information-projects/4.png",
       alt: "Annas cv image"
     },
@@ -68,11 +76,19 @@ export class InformationComponent implements OnInit {
       alt: "Annas cv image"
     },
     {
+      src: "../../../assets/images/information-projects/kc3.png",
+      alt: "Annas cv image"
+    },
+    {
       src: "../../../assets/images/information-projects/6.png",
       alt: "Annas cv image"
     },
     {
       src: "../../../assets/images/information-projects/7.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/onloc.png",
       alt: "Annas cv image"
     },
     {
@@ -85,6 +101,14 @@ export class InformationComponent implements OnInit {
     },
     {
       src: "../../../assets/images/information-projects/10.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/kc3.png",
+      alt: "Annas cv image"
+    },
+    {
+      src: "../../../assets/images/information-projects/kc4.png",
       alt: "Annas cv image"
     }
   ];
