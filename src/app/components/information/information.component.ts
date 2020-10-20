@@ -48,10 +48,6 @@ export class InformationComponent implements OnInit {
   ];
   projectsImages: Array<any> = [
     {
-      src: "../../../assets/images/information-projects/kc2.png",
-      alt: "Annas cv image"
-    },
-    {
       src: "../../../assets/images/information-projects/1.png",
       alt: "Annas cv image"
     },
