@@ -113,6 +113,33 @@ export class PortfolioComponent implements OnInit {
       ],
     },
     {
+      title: "Glasses store",
+      subtitle: "Website design",
+      handle: "shyEye",
+      images: [
+        {
+          src: "../../../assets/images/portfolio-assets/shyeye/shye1.png",
+          alt: "Shy Eye",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/shyeye/shye2.png",
+          alt: "Shy Eye",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/shyeye/shye3.png",
+          alt: "Shy Eye",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/shyeye/shye4.png",
+          alt: "Shy Eye",
+        },
+        {
+          src: "../../../assets/images/portfolio-assets/shyeye/shye5.png",
+          alt: "Shy Eye",
+        },
+      ],
+    },
+    {
       title: "Restaurant guide",
       subtitle: "Application design",
       handle: "michelinImages",
@@ -242,7 +269,7 @@ export class PortfolioComponent implements OnInit {
           alt: "Book spreads",
         },
       ],
-    },
+    }
   ];
 
   constructor(public reactiveService: ReactiveService) {}
