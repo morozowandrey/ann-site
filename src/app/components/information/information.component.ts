@@ -104,10 +104,6 @@ export class InformationComponent implements OnInit {
       alt: "Annas cv image"
     },
     {
-      src: "../../../assets/images/information-projects/kc3.png",
-      alt: "Annas cv image"
-    },
-    {
       src: "../../../assets/images/information-projects/kc4.png",
       alt: "Annas cv image"
     }
