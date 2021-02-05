@@ -22,12 +22,13 @@
     "@fullpage/angular-fullpage": "0.0.14",
     "@types/gsap": "^1.20.2",
     "core-js": "^2.5.4",
+    "firebase-tools": "^9.3.0",
     "gsap": "^3.0.4",
     "rxjs": "~6.3.3",
     "stickyfilljs": "^2.1.0",
+    "tiny-slider": "^2.9.2",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26",
-    "tiny-slider": "^2.9.2"
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
