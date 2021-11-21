@@ -2,12 +2,11 @@
   <div class="information-main flex-center">
     <div class="information-content flex-between">
       <div class="information-content-mobile information-content-mobile_top">
-        <a href="/" class="information-content-mobile-content flex-between">
-          <img
-            class="information-content-mobile-content__img"
-            src="../../../assets/images/cv.png"
-            alt="cv image"
-          />
+        <a href="/"
+           class="information-content-mobile-content flex-between">
+          <img class="information-content-mobile-content__img"
+               src="../../../assets/images/cv.png"
+               alt="cv image" />
           <p class="information-content-mobile-content__text">
             * check my paper version CV with full information
           </p>
@@ -16,31 +15,25 @@
 
       <div class="information-content-text">
         During
-        <a
-          #cvNode
-          href="../../../assets/annayushch-cv.pdf"
-          target="blanc"
-          class="information-content-text__action-part after-err-1"
-          (mouseenter)="mouseenter($event)"
-          (mouseleave)="mouseleave($event)"
-        >
-          the last three years,</a
-        >
+        <a #cvNode
+           href="../../../assets/annayushch-cv.pdf"
+           target="blanc"
+           class="information-content-text__action-part after-err-1"
+           (mouseenter)="mouseenter($event)"
+           (mouseleave)="mouseleave($event)">
+          the last four years,</a>
         <span>&nbsp;</span>
         <span class="overlap"><br /></span>
-        <a
-          #annaNode
-          href="#information"
-          disabled
-          tabindex="-1"
-          class="information-content-text__action-part"
-          [ngClass]="{
+        <a #annaNode
+           href="#information"
+           disabled
+           tabindex="-1"
+           class="information-content-text__action-part"
+           [ngClass]="{
             'information-content-text__action-part_false': isMobile
           }"
-          (mouseenter)="mouseenter($event)"
-          (mouseleave)="mouseleave($event)"
-          >I’ve</a
-        >
+           (mouseenter)="mouseenter($event)"
+           (mouseleave)="mouseleave($event)">I’ve</a>
         <span class="overlap_mob"><br /></span>
         mostly been working on
         <span class="overlap"><br /></span>
@@ -52,26 +45,22 @@
         <span class="overlap"><br /></span>
         than
         <span class="overlap_mob"><br /></span>
-        <a
-          #projectsNode
-          href="#work"
-          disabled
-          tabindex="-1"
-          class="information-content-text__action-part after-err-2"
-          (mouseenter)="mouseenter($event)"
-          (mouseleave)="mouseleave($event)"
-        >
-          100 design projects</a
-        >.
+        <a #projectsNode
+           href="#work"
+           disabled
+           tabindex="-1"
+           class="information-content-text__action-part after-err-2"
+           (mouseenter)="mouseenter($event)"
+           (mouseleave)="mouseleave($event)">
+          100 design projects</a>.
       </div>
 
       <div class="information-content-mobile information-content-mobile_bottom">
-        <a href="/" class="information-content-mobile-content flex-between">
-          <img
-            class="information-content-mobile-content__img"
-            src="../../../assets/images/info-projects-image_mob.png"
-            alt="project images collage"
-          />
+        <a href="/"
+           class="information-content-mobile-content flex-between">
+          <img class="information-content-mobile-content__img"
+               src="../../../assets/images/info-projects-image_mob.png"
+               alt="project images collage" />
           <p class="information-content-mobile-content__text">
             * check my selected works<span class="overlap"><br /></span> or just
             scroll down
@@ -81,56 +70,42 @@
     </div>
   </div>
   <div class="information-footer container">
-    <span
-      *ngIf="!showCv && !showProjects"
-      class="information-footer__link"
-    ></span>
+    <span *ngIf="!showCv && !showProjects"
+          class="information-footer__link"></span>
 
-    <span *ngIf="showCv" class="information-footer__link">
+    <span *ngIf="showCv"
+          class="information-footer__link">
       * check my paper version CV with full information
     </span>
-    <span *ngIf="showProjects" class="information-footer__link">
+    <span *ngIf="showProjects"
+          class="information-footer__link">
       * check my selected works or just scroll down
     </span>
   </div>
 </div>
 
-<div
-  #followImage
-  class="slideshow"
-  [ngClass]="{ 'slideshow-show': showCv || showAnna || showProjects }"
->
-  <div
-    #followImageBox1
-    [ngClass]="{ 'slideshow-show slideshow-show_cv': showCv }"
-  >
-    <img
-      *ngFor="let image of cvImages; let i = index"
-      src="{{ image.src }}"
-      alt="{{ image.alt }}"
-      class="slideshow__image slideshow__image_hide"
-    />
+<div #followImage
+     class="slideshow"
+     [ngClass]="{ 'slideshow-show': showCv || showAnna || showProjects }">
+  <div #followImageBox1
+       [ngClass]="{ 'slideshow-show slideshow-show_cv': showCv }">
+    <img *ngFor="let image of cvImages; let i = index"
+         src="{{ image.src }}"
+         alt="{{ image.alt }}"
+         class="slideshow__image slideshow__image_hide" />
   </div>
-  <div
-    #followImageBox2
-    [ngClass]="{ 'slideshow-show slideshow-show_ann': showAnna }"
-  >
-    <img
-      *ngFor="let image of annaImages; let i = index"
-      src="{{ image.src }}"
-      alt="{{ image.alt }}"
-      class="slideshow__image slideshow__image_hide"
-    />
+  <div #followImageBox2
+       [ngClass]="{ 'slideshow-show slideshow-show_ann': showAnna }">
+    <img *ngFor="let image of annaImages; let i = index"
+         src="{{ image.src }}"
+         alt="{{ image.alt }}"
+         class="slideshow__image slideshow__image_hide" />
   </div>
-  <div
-    #followImageBox3
-    [ngClass]="{ 'slideshow-show slideshow-show_projects': showProjects }"
-  >
-    <img
-      *ngFor="let image of projectsImages; let i = index"
-      src="{{ image.src }}"
-      alt="{{ image.alt }}"
-      class="slideshow__image slideshow__image_hide"
-    />
+  <div #followImageBox3
+       [ngClass]="{ 'slideshow-show slideshow-show_projects': showProjects }">
+    <img *ngFor="let image of projectsImages; let i = index"
+         src="{{ image.src }}"
+         alt="{{ image.alt }}"
+         class="slideshow__image slideshow__image_hide" />
   </div>
 </div>
