@@ -24,6 +24,7 @@
     "core-js": "^2.5.4",
     "firebase-tools": "^9.3.0",
     "gsap": "^3.0.4",
+    "node-sass": "^6.0.1",
     "rxjs": "~6.3.3",
     "stickyfilljs": "^2.1.0",
     "tiny-slider": "^2.9.2",
