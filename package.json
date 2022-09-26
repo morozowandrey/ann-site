@@ -22,7 +22,7 @@
     "@fullpage/angular-fullpage": "0.0.14",
     "@types/gsap": "^1.20.2",
     "core-js": "^2.5.4",
-    "firebase-tools": "^9.3.0",
+    "firebase-tools": "^9.23.3",
     "gsap": "^3.0.4",
     "sass": "^1.49.11",
     "rxjs": "~6.3.3",
